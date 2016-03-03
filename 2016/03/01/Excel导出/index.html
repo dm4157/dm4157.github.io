@@ -6,26 +6,31 @@
 </blockquote>
 <p>这是发生在我系统中的故（shi）事（gu）。报表导出是很稀松平常的功能，随便搞搞就好。然而当导出量增<br>大时，问题可能就棘手了。<br>我系统中常有20W左右的报表导出，导出时CPU一路高歌、内存余额紧缺，最终结果往往是这样的：</p>
 <ul>
-<li>CPU过高导致memcached客户端连接超时，系统 <strong>宕机</strong> ；</li>
-<li>内存余额清零，<code>OOM</code>，系统 <strong>宕机</strong> ；</li>
-<li>系统心情好，顺产~；<br>最近第一条故障频发，心力交瘁，疲于应付。痛定思痛，是时候梳理下报表导出了。</li>
+<li>CPU过高导致memcached客户端连接超时，系统<strong>宕机</strong>；</li>
+<li>内存余额清零<code>OOM</code>，系统<strong>宕机</strong>；</li>
+<li>系统心情好，顺产~；</li>
 </ul>
+<p>最近第一条故障频发，心力交瘁，疲于应付。痛定思痛，是时候梳理下报表导出了。</p>
 <h1 id="硬币的两面"><a href="#硬币的两面" class="headerlink" title="硬币的两面"></a>硬币的两面</h1><blockquote>
 <p>产品与技术是一个硬币的两面。  – 邓爷爷</p>
 </blockquote>
-<h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><p>报表导出产品设计通常简单随意，不妨重新思考下极限情况：</p>
+<h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><p>报表导出产品设计通常简单随意，不妨重新思考下极限与体验：</p>
 <ul>
-<li>产品上对导出极限值进行限制，避免系统 <strong>宕机</strong>；比如时间范围限制、最终结果限制；</li>
+<li>产品上对导出极限值进行限制，避免系统<strong>宕机</strong>；比如时间范围限制、最终结果限制；</li>
 <li>在导出时进行二次确认，保证用户执行了正确的报表导出动作，避免无意义的导出操作；</li>
-<li>精心筛选导出字段，避免不必要的字段增加导出负担；<h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2></li>
+<li>精心筛选导出字段，避免不必要的字段增加导出负担；</li>
+</ul>
+<h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><p>报表导出开发技术通常简单粗暴， 不放重新思考下效率与健壮：</p>
+<ul>
 <li>内在导出上限设置，超出报错；</li>
 <li>性能更优的代码，或者更适合业务的代码；比如有的方法适合小数据量导出，有的则适合大量导出；</li>
+<li>解决问题的思路是否可以变换一下，比如需要导出的数据分页查出，逐批写入；</li>
 </ul>
 <hr>
 <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><blockquote>
 <p>Excel导出常见工具包为POI和JXL,功能上POI更多些，然而我也用不上，其实我是看牌子的，POI是Apache家的。</p>
 </blockquote>
-<p>POI采用了较好的面向对象的思想，Excel表格中的一些概念都变成了类，比如工作簿(<code>WorkBook</code>)、工作表(<code>Sheet</code>)、行(<code>Row</code>)、单元格(<code>Cell</code>)。创建一个Excel文件的基本步骤是这样的：</p>
+<p>POI采用了较好的面向对象的思想，Excel表格中的一些概念都变成了类，<br>比如工作簿(<code>WorkBook</code>)、工作表(<code>Sheet</code>)、行(<code>Row</code>)、单元格(<code>Cell</code>)。<br>创建一个Excel文件的基本步骤是这样的：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建工作簿 2003版的, .xls</span></span><br><span class="line">Workbook wb = <span class="keyword">new</span> HSSFWorkbook();</span><br><span class="line"><span class="comment">// 2007以后, .xlsx</span></span><br><span class="line"><span class="comment">// Workbook wb = new XSSFWorkbook();</span></span><br><span class="line">CreationHelper createHelper = wb.getCreationHelper();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用工作簿创建工作表</span></span><br><span class="line">Sheet sheet = wb.createSheet(<span class="string">"new sheet"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用工作表创建行, 参数是行号, 从0开始</span></span><br><span class="line">Row row = sheet.createRow((<span class="keyword">short</span>) <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用行创建单元格, 参数是列号, 从0开始</span></span><br><span class="line">Cell cell = row.createCell(<span class="number">0</span>);</span><br><span class="line">cell.setCellValue(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">row.createCell(<span class="number">1</span>).setCellValue(<span class="number">1.2</span>);</span><br><span class="line">row.createCell(<span class="number">2</span>).setCellValue(</span><br><span class="line">        createHelper.createRichTextString(<span class="string">"This is a string"</span>));</span><br><span class="line">row.createCell(<span class="number">3</span>).setCellValue(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">FileOutputStream fileOut = <span class="keyword">new</span> FileOutputStream(<span class="string">"workbook.xls"</span>);</span><br><span class="line"><span class="comment">// 调用工作簿write方法写入流</span></span><br><span class="line">wb.write(fileOut);</span><br><span class="line">fileOut.close();</span><br></pre></td></tr></table></figure>
 <p>导入导出不同之处就是一个读一个写（废话）， 简单用用还是不难</p>
 <blockquote>
@@ -33,7 +38,7 @@
 </blockquote>
 <h1 id="“大数据”"><a href="#“大数据”" class="headerlink" title="“大数据”"></a>“大数据”</h1><p>当数据量激增，达到几万几十万的时候，导出似乎就没那么简单了。如何应对“大数据”对内存的冲击？使用<code>SXSSFWorkbook</code>即可</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 内存中只驻留100行数据</span></span><br><span class="line">SXSSFWorkbook workbook = <span class="keyword">new</span> SXSSFWorkbook(<span class="number">100</span>);</span><br></pre></td></tr></table></figure>
-<p>据说<code>SXSSFWorkbook</code>采用流式写法，可以将多余的数据写到磁盘临时文件中去，从而保证内存的安全。但有了好处自然麻烦（平衡之道），使用结束时记得<strong>销毁</strong>临时文件。</p>
+<p>据说<code>SXSSFWorkbook</code>采用流式写法，可以将多余的数据写到磁盘临时文件中去，从而保证内存的安全。<br>但有了好处自然麻烦（平衡之道），使用结束时记得<strong>销毁</strong>临时文件。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 内存中只驻留100行数据</span></span><br><span class="line">SXSSFWorkbook workbook = <span class="keyword">new</span> SXSSFWorkbook(<span class="number">100</span>);</span><br><span class="line">...</span><br><span class="line">workbook.dispose();</span><br></pre></td></tr></table></figure>
 <p>至于缓存100行还是1000行，这需要自己去尝试，我也是在路上。</p>
 <h1 id="新玩法"><a href="#新玩法" class="headerlink" title="新玩法"></a>新玩法</h1><blockquote>
@@ -77,4 +82,4 @@
 <li>不支持设置表格式，比如列宽、字体、颜色等。</li>
 <li>可按照同样的逻辑去编写Excel导入方法。</li>
 </ul>
-</div></article></div></section><footer><div class="paginator"></div><div class="copyright"><p>© 2016 <a href="http://dm4157.github.io">殇月陨</a>, unless otherwise noted.</p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
+</div></article></div></section><footer><div class="paginator"></div><div class="copyright"><p>© 2016 <a href="http://dm4157.github.io">殇月陨</a>, 慕斯蛋糕@4157.</p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dm4157.github.io/"/>
-  <updated>2016-03-03T09:34:44.000Z</updated>
+  <updated>2016-03-03T10:18:25.000Z</updated>
   <id>http://dm4157.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://dm4157.github.io/2016/03/01/Excel%E5%AF%BC%E5%87%BA/"/>
     <id>http://dm4157.github.io/2016/03/01/Excel导出/</id>
     <published>2016-02-29T16:00:00.000Z</published>
-    <updated>2016-03-03T09:34:44.000Z</updated>
+    <updated>2016-03-03T10:18:25.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Excel导出是常见的系统功能。 —-某人说&lt;/p&gt;
@@ -30,26 +30,31 @@
 &lt;/blockquote&gt;
 &lt;p&gt;这是发生在我系统中的故（shi）事（gu）。报表导出是很稀松平常的功能，随便搞搞就好。然而当导出量增&lt;br&gt;大时，问题可能就棘手了。&lt;br&gt;我系统中常有20W左右的报表导出，导出时CPU一路高歌、内存余额紧缺，最终结果往往是这样的：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;CPU过高导致memcached客户端连接超时，系统 &lt;strong&gt;宕机&lt;/strong&gt; ；&lt;/li&gt;
-&lt;li&gt;内存余额清零，&lt;code&gt;OOM&lt;/code&gt;，系统 &lt;strong&gt;宕机&lt;/strong&gt; ；&lt;/li&gt;
-&lt;li&gt;系统心情好，顺产~；&lt;br&gt;最近第一条故障频发，心力交瘁，疲于应付。痛定思痛，是时候梳理下报表导出了。&lt;/li&gt;
+&lt;li&gt;CPU过高导致memcached客户端连接超时，系统&lt;strong&gt;宕机&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;内存余额清零&lt;code&gt;OOM&lt;/code&gt;，系统&lt;strong&gt;宕机&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;系统心情好，顺产~；&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;最近第一条故障频发，心力交瘁，疲于应付。痛定思痛，是时候梳理下报表导出了。&lt;/p&gt;
 &lt;h1 id=&quot;硬币的两面&quot;&gt;&lt;a href=&quot;#硬币的两面&quot; class=&quot;headerlink&quot; title=&quot;硬币的两面&quot;&gt;&lt;/a&gt;硬币的两面&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;产品与技术是一个硬币的两面。  – 邓爷爷&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;产品&quot;&gt;&lt;a href=&quot;#产品&quot; class=&quot;headerlink&quot; title=&quot;产品&quot;&gt;&lt;/a&gt;产品&lt;/h2&gt;&lt;p&gt;报表导出产品设计通常简单随意，不妨重新思考下极限情况：&lt;/p&gt;
+&lt;h2 id=&quot;产品&quot;&gt;&lt;a href=&quot;#产品&quot; class=&quot;headerlink&quot; title=&quot;产品&quot;&gt;&lt;/a&gt;产品&lt;/h2&gt;&lt;p&gt;报表导出产品设计通常简单随意，不妨重新思考下极限与体验：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;产品上对导出极限值进行限制，避免系统 &lt;strong&gt;宕机&lt;/strong&gt;；比如时间范围限制、最终结果限制；&lt;/li&gt;
+&lt;li&gt;产品上对导出极限值进行限制，避免系统&lt;strong&gt;宕机&lt;/strong&gt;；比如时间范围限制、最终结果限制；&lt;/li&gt;
 &lt;li&gt;在导出时进行二次确认，保证用户执行了正确的报表导出动作，避免无意义的导出操作；&lt;/li&gt;
-&lt;li&gt;精心筛选导出字段，避免不必要的字段增加导出负担；&lt;h2 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h2&gt;&lt;/li&gt;
+&lt;li&gt;精心筛选导出字段，避免不必要的字段增加导出负担；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h2&gt;&lt;p&gt;报表导出开发技术通常简单粗暴， 不放重新思考下效率与健壮：&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;内在导出上限设置，超出报错；&lt;/li&gt;
 &lt;li&gt;性能更优的代码，或者更适合业务的代码；比如有的方法适合小数据量导出，有的则适合大量导出；&lt;/li&gt;
+&lt;li&gt;解决问题的思路是否可以变换一下，比如需要导出的数据分页查出，逐批写入；&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;Excel导出常见工具包为POI和JXL,功能上POI更多些，然而我也用不上，其实我是看牌子的，POI是Apache家的。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;POI采用了较好的面向对象的思想，Excel表格中的一些概念都变成了类，比如工作簿(&lt;code&gt;WorkBook&lt;/code&gt;)、工作表(&lt;code&gt;Sheet&lt;/code&gt;)、行(&lt;code&gt;Row&lt;/code&gt;)、单元格(&lt;code&gt;Cell&lt;/code&gt;)。创建一个Excel文件的基本步骤是这样的：&lt;/p&gt;
+&lt;p&gt;POI采用了较好的面向对象的思想，Excel表格中的一些概念都变成了类，&lt;br&gt;比如工作簿(&lt;code&gt;WorkBook&lt;/code&gt;)、工作表(&lt;code&gt;Sheet&lt;/code&gt;)、行(&lt;code&gt;Row&lt;/code&gt;)、单元格(&lt;code&gt;Cell&lt;/code&gt;)。&lt;br&gt;创建一个Excel文件的基本步骤是这样的：&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 创建工作簿 2003版的, .xls&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Workbook wb = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; HSSFWorkbook();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 2007以后, .xlsx&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Workbook wb = new XSSFWorkbook();&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;CreationHelper createHelper = wb.getCreationHelper();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 用工作簿创建工作表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Sheet sheet = wb.createSheet(&lt;span class=&quot;string&quot;&gt;&quot;new sheet&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 用工作表创建行, 参数是行号, 从0开始&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Row row = sheet.createRow((&lt;span class=&quot;keyword&quot;&gt;short&lt;/span&gt;) &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 用行创建单元格, 参数是列号, 从0开始&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Cell cell = row.createCell(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cell.setCellValue(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;row.createCell(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;).setCellValue(&lt;span class=&quot;number&quot;&gt;1.2&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;row.createCell(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;).setCellValue(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        createHelper.createRichTextString(&lt;span class=&quot;string&quot;&gt;&quot;This is a string&quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;row.createCell(&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;).setCellValue(&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;FileOutputStream fileOut = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; FileOutputStream(&lt;span class=&quot;string&quot;&gt;&quot;workbook.xls&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 调用工作簿write方法写入流&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wb.write(fileOut);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fileOut.close();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;导入导出不同之处就是一个读一个写（废话）， 简单用用还是不难&lt;/p&gt;
 &lt;blockquote&gt;
@@ -57,7 +62,7 @@
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;“大数据”&quot;&gt;&lt;a href=&quot;#“大数据”&quot; class=&quot;headerlink&quot; title=&quot;“大数据”&quot;&gt;&lt;/a&gt;“大数据”&lt;/h1&gt;&lt;p&gt;当数据量激增，达到几万几十万的时候，导出似乎就没那么简单了。如何应对“大数据”对内存的冲击？使用&lt;code&gt;SXSSFWorkbook&lt;/code&gt;即可&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 内存中只驻留100行数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SXSSFWorkbook workbook = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; SXSSFWorkbook(&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;据说&lt;code&gt;SXSSFWorkbook&lt;/code&gt;采用流式写法，可以将多余的数据写到磁盘临时文件中去，从而保证内存的安全。但有了好处自然麻烦（平衡之道），使用结束时记得&lt;strong&gt;销毁&lt;/strong&gt;临时文件。&lt;/p&gt;
+&lt;p&gt;据说&lt;code&gt;SXSSFWorkbook&lt;/code&gt;采用流式写法，可以将多余的数据写到磁盘临时文件中去，从而保证内存的安全。&lt;br&gt;但有了好处自然麻烦（平衡之道），使用结束时记得&lt;strong&gt;销毁&lt;/strong&gt;临时文件。&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 内存中只驻留100行数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SXSSFWorkbook workbook = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; SXSSFWorkbook(&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;workbook.dispose();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;至于缓存100行还是1000行，这需要自己去尝试，我也是在路上。&lt;/p&gt;
 &lt;h1 id=&quot;新玩法&quot;&gt;&lt;a href=&quot;#新玩法&quot; class=&quot;headerlink&quot; title=&quot;新玩法&quot;&gt;&lt;/a&gt;新玩法&lt;/h1&gt;&lt;blockquote&gt;
