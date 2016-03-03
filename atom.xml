@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dm4157.github.io/"/>
-  <updated>2016-03-03T07:51:17.000Z</updated>
+  <updated>2016-03-03T09:34:44.000Z</updated>
   <id>http://dm4157.github.io/</id>
   
   <author>
@@ -17,14 +17,35 @@
   
   <entry>
     <title>Excel导出</title>
-    <link href="http://dm4157.github.io/2016/03/02/Excel%E5%AF%BC%E5%87%BA/"/>
-    <id>http://dm4157.github.io/2016/03/02/Excel导出/</id>
-    <published>2016-03-01T16:00:00.000Z</published>
-    <updated>2016-03-03T07:51:17.000Z</updated>
+    <link href="http://dm4157.github.io/2016/03/01/Excel%E5%AF%BC%E5%87%BA/"/>
+    <id>http://dm4157.github.io/2016/03/01/Excel导出/</id>
+    <published>2016-02-29T16:00:00.000Z</published>
+    <updated>2016-03-03T09:34:44.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Excel导出是常见的系统功能。 —-某人说&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h1 id=&quot;故事&quot;&gt;&lt;a href=&quot;#故事&quot; class=&quot;headerlink&quot; title=&quot;故事&quot;&gt;&lt;/a&gt;故事&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;导报表，会宕机，勿动！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这是发生在我系统中的故（shi）事（gu）。报表导出是很稀松平常的功能，随便搞搞就好。然而当导出量增&lt;br&gt;大时，问题可能就棘手了。&lt;br&gt;我系统中常有20W左右的报表导出，导出时CPU一路高歌、内存余额紧缺，最终结果往往是这样的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU过高导致memcached客户端连接超时，系统 &lt;strong&gt;宕机&lt;/strong&gt; ；&lt;/li&gt;
+&lt;li&gt;内存余额清零，&lt;code&gt;OOM&lt;/code&gt;，系统 &lt;strong&gt;宕机&lt;/strong&gt; ；&lt;/li&gt;
+&lt;li&gt;系统心情好，顺产~；&lt;br&gt;最近第一条故障频发，心力交瘁，疲于应付。痛定思痛，是时候梳理下报表导出了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;硬币的两面&quot;&gt;&lt;a href=&quot;#硬币的两面&quot; class=&quot;headerlink&quot; title=&quot;硬币的两面&quot;&gt;&lt;/a&gt;硬币的两面&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;产品与技术是一个硬币的两面。  – 邓爷爷&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;产品&quot;&gt;&lt;a href=&quot;#产品&quot; class=&quot;headerlink&quot; title=&quot;产品&quot;&gt;&lt;/a&gt;产品&lt;/h2&gt;&lt;p&gt;报表导出产品设计通常简单随意，不妨重新思考下极限情况：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;产品上对导出极限值进行限制，避免系统 &lt;strong&gt;宕机&lt;/strong&gt;；比如时间范围限制、最终结果限制；&lt;/li&gt;
+&lt;li&gt;在导出时进行二次确认，保证用户执行了正确的报表导出动作，避免无意义的导出操作；&lt;/li&gt;
+&lt;li&gt;精心筛选导出字段，避免不必要的字段增加导出负担；&lt;h2 id=&quot;技术&quot;&gt;&lt;a href=&quot;#技术&quot; class=&quot;headerlink&quot; title=&quot;技术&quot;&gt;&lt;/a&gt;技术&lt;/h2&gt;&lt;/li&gt;
+&lt;li&gt;内在导出上限设置，超出报错；&lt;/li&gt;
+&lt;li&gt;性能更优的代码，或者更适合业务的代码；比如有的方法适合小数据量导出，有的则适合大量导出；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
 &lt;h1 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;Excel导出常见工具包为POI和JXL,功能上POI更多些，然而我也用不上，其实我是看牌子的，POI是Apache家的。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -87,7 +108,7 @@
       &lt;blockquote&gt;
 &lt;p&gt;Excel导出是常见的系统功能。 —-某人说&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h1&gt;&lt;blockquote&gt;
+&lt;h1 id=&quot;故事&quot;&gt;&lt;a href=&quot;#故事&quot; class=&quot;headerlink&quot; title=&quot;故事&quot;&gt;&lt;/a&gt;故事&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;
     
     </summary>
