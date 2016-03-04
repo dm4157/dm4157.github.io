@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dm4157.github.io/"/>
-  <updated>2016-03-04T08:00:50.000Z</updated>
+  <updated>2016-03-04T08:16:13.000Z</updated>
   <id>http://dm4157.github.io/</id>
   
   <author>
@@ -16,15 +16,17 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>git大南</title>
     <link href="http://dm4157.github.io/2016/03/04/git%E5%A4%A7%E5%8D%97/"/>
     <id>http://dm4157.github.io/2016/03/04/git大南/</id>
     <published>2016-03-04T08:00:50.000Z</published>
-    <updated>2016-03-04T08:00:50.000Z</updated>
+    <updated>2016-03-04T08:16:13.000Z</updated>
     
-    <content type="html"></content>
+    <content type="html">&lt;h1 id=&quot;邂逅Idea&quot;&gt;&lt;a href=&quot;#邂逅Idea&quot; class=&quot;headerlink&quot; title=&quot;邂逅Idea&quot;&gt;&lt;/a&gt;邂逅Idea&lt;/h1&gt;</content>
     
     <summary type="html">
+    
+      &lt;h1 id=&quot;邂逅Idea&quot;&gt;&lt;a href=&quot;#邂逅Idea&quot; class=&quot;headerlink&quot; title=&quot;邂逅Idea&quot;&gt;&lt;/a&gt;邂逅Idea&lt;/h1&gt;
     
     </summary>
     
@@ -36,7 +38,7 @@
     <link href="http://dm4157.github.io/2016/03/04/git%E5%B0%8F%E5%8D%97/"/>
     <id>http://dm4157.github.io/2016/03/04/git小南/</id>
     <published>2016-03-04T01:13:04.000Z</published>
-    <updated>2016-03-04T08:13:54.000Z</updated>
+    <updated>2016-03-04T08:16:40.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;请以解决问题为核心，不要为了用技术而用技术。&lt;/p&gt;
@@ -50,9 +52,7 @@
 &lt;/ol&gt;
 &lt;p&gt;这样的设计便于多人协作&lt;/p&gt;
 &lt;h1 id=&quot;Hello-Git&quot;&gt;&lt;a href=&quot;#Hello-Git&quot; class=&quot;headerlink&quot; title=&quot;Hello Git&quot;&gt;&lt;/a&gt;Hello Git&lt;/h1&gt;&lt;p&gt;使用Git有两种开始，一种是检出已存在的项目继续开发，另一种是新建项目。&lt;br&gt;但无论哪一种，都要从安装Git开始。&lt;/p&gt;
-&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;去官网下载&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://git-scm.com/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;去官网下载&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;新的开始&quot;&gt;&lt;a href=&quot;#新的开始&quot; class=&quot;headerlink&quot; title=&quot;新的开始&quot;&gt;&lt;/a&gt;新的开始&lt;/h2&gt;&lt;p&gt;以mac系统为例&lt;/p&gt;
 &lt;h4 id=&quot;创建本地Git仓库&quot;&gt;&lt;a href=&quot;#创建本地Git仓库&quot; class=&quot;headerlink&quot; title=&quot;创建本地Git仓库&quot;&gt;&lt;/a&gt;创建本地Git仓库&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# 新建目录把它当做Git仓库&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd ~&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mkdir hello-git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd hello-git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 初始化Git仓库&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git init&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 通过命令查看创建出的.git目录，和.gitignore文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ll -a&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h4 id=&quot;提交代码&quot;&gt;&lt;a href=&quot;#提交代码&quot; class=&quot;headerlink&quot; title=&quot;提交代码&quot;&gt;&lt;/a&gt;提交代码&lt;/h4&gt;&lt;p&gt;在&lt;code&gt;hello-git&lt;/code&gt;目录下，随便怎么写带你文字。用下面的命令提交代码：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# 首先将改动的部分添加到提交清单&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 添加单个文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git add first.java&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 添加所有文件（常用）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git add *&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 提交&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git commit -m &amp;apos;我是本次提交的说明&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
