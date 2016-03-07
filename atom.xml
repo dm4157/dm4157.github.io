@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dm4157.github.io/"/>
-  <updated>2016-03-04T10:56:48.000Z</updated>
+  <updated>2016-03-07T05:35:26.000Z</updated>
   <id>http://dm4157.github.io/</id>
   
   <author>
@@ -16,11 +16,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>碎念</title>
+    <link href="http://dm4157.github.io/2016/03/06/%E7%A2%8E%E5%BF%B5/"/>
+    <id>http://dm4157.github.io/2016/03/06/碎念/</id>
+    <published>2016-03-06T02:54:26.000Z</published>
+    <updated>2016-03-07T05:35:26.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;初心&quot;&gt;&lt;a href=&quot;#初心&quot; class=&quot;headerlink&quot; title=&quot;初心&quot;&gt;&lt;/a&gt;初心&lt;/h2&gt;&lt;p&gt;初入公司，是好奇的，是拘谨的。&lt;/p&gt;
+&lt;p&gt;那年初夏，加入了那个团队，一切都井井有条。产品设计好，开发来实现，测试去审核。现在想来，只如初见。&lt;br&gt;那时的我会因为被测试发现八哥而心怀愧疚；因禅道上的八哥惶惶不安；惧怕迭代总结会，“害羞”分享；现在想来，只如初见。&lt;br&gt;那时真的很青涩，也因此真的很认真。应该是每个新人的“通病”吧，努力做好工作，期待更优秀的自己。&lt;br&gt;那个时候，跟着产品走，无暇他顾。&lt;/p&gt;
+&lt;p&gt;这是一个恬静的时代。&lt;/p&gt;
+&lt;h2 id=&quot;一个人&quot;&gt;&lt;a href=&quot;#一个人&quot; class=&quot;headerlink&quot; title=&quot;一个人&quot;&gt;&lt;/a&gt;一个人&lt;/h2&gt;&lt;p&gt;恬静是不能持续的。人生会迎来各种变故，渐渐的，我的团队只有我自己了。&lt;br&gt;一个人接需求，一个人开发；一个人测试，一个人上线；都是一个团队，一个人。&lt;/p&gt;
+&lt;p&gt;那是”磨难”的时期，与初见完全不同，但也不是坏事。适应开始的不适，尝试自己决定方向。&lt;br&gt;原则是说干就上。系统以肉眼可见的速度在迭代，在进步。营运需求的实现，历史问题的解决。&lt;br&gt;但“疲软”袭来，工作已经只是工作，而我只是为了完成任务，保证系统运行稳定。每天三点一线的生活。&lt;br&gt;那份初心渐渐不再。&lt;/p&gt;
+&lt;p&gt;这是一个平淡的时代。&lt;/p&gt;
+&lt;h2 id=&quot;灿烂的光&quot;&gt;&lt;a href=&quot;#灿烂的光&quot; class=&quot;headerlink&quot; title=&quot;灿烂的光&quot;&gt;&lt;/a&gt;灿烂的光&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;年年岁岁花相似，岁岁年年人不同&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一个团队一个人，渐渐变成一个团队三个小组数个人。一切似乎回到了初见，只是人不同。&lt;/p&gt;
+&lt;p&gt;面对几经人手的系统，该继续苟延残喘，还是奋起重构？”革命尚未成功”，我辈少年郎当勇于站出来，用自己的一切让一切更美好。&lt;br&gt;有勇气不畏艰难，用智慧控制局面，让技术改变一切。&lt;br&gt;不忘初心，系统是我的作品而不仅是我的工作，我希望尽我所能让她更优秀。从需求实现到代码结构都是完美的，当然要走的路很长，但我已经在路上。&lt;br&gt;与产品商量，更完美的需求实现；与测试讨论，更严谨的程序评测；与开发探讨，更优雅的代码结构、更健壮的函数逻辑、更高效的系统性能。&lt;/p&gt;
+&lt;p&gt;用户激增、业务复杂多变，对系统提出了更多挑战，对我们提出了更多要求。同时，也带来了更多的机会，更多学习、施展的机会。&lt;br&gt;存在的未必都是合理的，无需等待，说干就上。&lt;br&gt;每个人都是一束光，照亮周围，很荣幸与你一起共事。&lt;/p&gt;
+&lt;p&gt;这是一个灿烂的时代。&lt;br&gt;这个时代因我们而灿烂。&lt;/p&gt;
+&lt;h2 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;&lt;p&gt;很抱歉前文莫名写的很抽象，最后只好拼接一点“微干”的：&lt;br&gt;关于学习，坚持一个目标两条路线即可。&lt;br&gt;一个长远的学习目标，2、5、10年后想做什么，那么我需要哪些技术？&lt;br&gt;一条隐含的内线，长期坚持学习基本功，像数学、算法、英文之类的。&lt;br&gt;一条明确的外线，短期而高效的目标，像各种框架的使用、Redis、MQ之类的。&lt;br&gt;两条线并行。&lt;/p&gt;
+&lt;p&gt;最后感谢所有人，给我帮助或者给我”磨难”；&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;初心&quot;&gt;&lt;a href=&quot;#初心&quot; class=&quot;headerlink&quot; title=&quot;初心&quot;&gt;&lt;/a&gt;初心&lt;/h2&gt;&lt;p&gt;初入公司，是好奇的，是拘谨的。&lt;/p&gt;
+&lt;p&gt;那年初夏，加入了那个团队，一切都井井有条。产品设计好，开发来实现，测试去审核。现在想来，只如初
+    
+    </summary>
+    
+      <category term="杂文" scheme="http://dm4157.github.io/categories/%E6%9D%82%E6%96%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Git大南</title>
     <link href="http://dm4157.github.io/2016/03/04/git%E5%A4%A7%E5%8D%97/"/>
     <id>http://dm4157.github.io/2016/03/04/git大南/</id>
     <published>2016-03-04T08:00:50.000Z</published>
-    <updated>2016-03-04T10:56:48.000Z</updated>
+    <updated>2016-03-06T02:54:50.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;邂逅Idea&quot;&gt;&lt;a href=&quot;#邂逅Idea&quot; class=&quot;headerlink&quot; title=&quot;邂逅Idea&quot;&gt;&lt;/a&gt;邂逅Idea&lt;/h1&gt;&lt;h4 id=&quot;谁是作者&quot;&gt;&lt;a href=&quot;#谁是作者&quot; class=&quot;headerlink&quot; title=&quot;谁是作者&quot;&gt;&lt;/a&gt;谁是作者&lt;/h4&gt;&lt;p&gt;使用idea与git集成开发，在提交时会有个疑问：本次提交的作者是谁？&lt;br&gt;在&lt;code&gt;Commit Changes&lt;/code&gt;界面右上角有个&lt;code&gt;Author&lt;/code&gt;下拉列表，可以选择本次提交的作者。&lt;br&gt;可以默认选择一个作者么？答案是不可以。那么每次提交的默认作者是谁？&lt;br&gt;不是上一次提交时选择的作者，这个默认作者保存在gitconfig中，可以根据需要自行更改。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cat ~/.gitconfig&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;结果类似这样：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[user]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	name = 殇月陨&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	email = xxxx@xx.com&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -53,6 +89,8 @@
       &lt;h1 id=&quot;邂逅Idea&quot;&gt;&lt;a href=&quot;#邂逅Idea&quot; class=&quot;headerlink&quot; title=&quot;邂逅Idea&quot;&gt;&lt;/a&gt;邂逅Idea&lt;/h1&gt;&lt;h4 id=&quot;谁是作者&quot;&gt;&lt;a href=&quot;#谁是作者&quot; class=&quot;headerlink&quot; title=&quot;谁
     
     </summary>
+    
+      <category term="Git" scheme="http://dm4157.github.io/categories/Git/"/>
     
     
   </entry>
