@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dm4157.github.io/"/>
-  <updated>2016-03-07T05:55:47.000Z</updated>
+  <updated>2016-03-08T02:06:03.000Z</updated>
   <id>http://dm4157.github.io/</id>
   
   <author>
@@ -16,11 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>飘絮SpringBoot</title>
+    <link href="http://dm4157.github.io/2016/03/08/springboot/"/>
+    <id>http://dm4157.github.io/2016/03/08/springboot/</id>
+    <published>2016-03-08T02:04:22.000Z</published>
+    <updated>2016-03-08T02:06:03.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;配置文件&quot;&gt;&lt;a href=&quot;#配置文件&quot; class=&quot;headerlink&quot; title=&quot;配置文件&quot;&gt;&lt;/a&gt;配置文件&lt;/h1&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;配置文件&quot;&gt;&lt;a href=&quot;#配置文件&quot; class=&quot;headerlink&quot; title=&quot;配置文件&quot;&gt;&lt;/a&gt;配置文件&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="http://dm4157.github.io/categories/SpringBoot/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>碎念</title>
     <link href="http://dm4157.github.io/2016/03/06/%E7%A2%8E%E5%BF%B5/"/>
     <id>http://dm4157.github.io/2016/03/06/碎念/</id>
     <published>2016-03-06T02:54:26.000Z</published>
-    <updated>2016-03-07T05:55:47.000Z</updated>
+    <updated>2016-03-08T07:20:57.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;初心&quot;&gt;&lt;a href=&quot;#初心&quot; class=&quot;headerlink&quot; title=&quot;初心&quot;&gt;&lt;/a&gt;初心&lt;/h2&gt;&lt;p&gt;初入公司，是好奇的，是拘谨的。&lt;/p&gt;
 &lt;p&gt;那年初夏，加入了那个团队，一切都井井有条。产品设计好，开发来实现，测试去审核。现在想来，只如初见。&lt;br&gt;那时的我会因为被测试发现八哥而心怀愧疚；因禅道上的八哥惶惶不安；惧怕迭代总结会，“害羞”分享；现在想来，只如初见。&lt;br&gt;那时真的很青涩，也因此真的很认真。应该是每个新人的“通病”吧，努力做好工作，期待更优秀的自己。&lt;br&gt;那个时候，跟着产品走，无暇他顾。&lt;/p&gt;
@@ -32,7 +52,8 @@
 &lt;p&gt;年年岁岁花相似，岁岁年年人不同&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;一个团队一个人，渐渐变成一个团队三个小组数个人。一切似乎回到了初见，只是人不同。&lt;/p&gt;
-&lt;p&gt;面对几经人手的系统，该继续苟延残喘，还是奋起重构？”革命尚未成功”，我辈少年郎当勇于站出来，用自己的一切让一切更美好。&lt;br&gt;有勇气不畏艰难，用智慧控制局面，让技术改变一切。&lt;br&gt;&lt;strong&gt;不忘初心&lt;/strong&gt;，系统是我的作品而不仅是我的工作，我希望尽我所能让她更优秀。从需求实现到代码结构都是完美的，当然要走的路很长，但我已经在路上。&lt;br&gt;与产品商量，更完美的需求实现；与测试讨论，更严谨的程序评测；与开发探讨，更优雅的代码结构、更健壮的函数逻辑、更高效的系统性能。&lt;/p&gt;
+&lt;p&gt;面对几经人手的系统，该继续苟延残喘，还是奋起重构？”革命尚未成功”，我辈少年郎当勇于站出来，用自己的一切让一切更美好。&lt;br&gt;有勇气不畏艰难，用智慧控制局面，让技术改变一切。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;初心莫负&lt;/strong&gt;&lt;br&gt;系统是我的作品而不仅是我的工作，我希望尽我所能让她更优秀。从需求实现到代码结构都是完美的，当然要走的路很长，但我已经在路上。&lt;br&gt;与产品商量，更完美的需求实现；与测试讨论，更严谨的程序评测；与开发探讨，更优雅的代码结构、更健壮的函数逻辑、更高效的系统性能。&lt;/p&gt;
 &lt;p&gt;用户激增、业务复杂多变，对系统提出了更多挑战，对我们提出了更多要求。同时，也带来了更多的机会，更多学习、施展的机会。&lt;br&gt;存在的未必都是合理的，无需等待，说干就上。&lt;br&gt;每个人都是一束光，照亮周围，很荣幸与你一起共事。&lt;/p&gt;
 &lt;p&gt;这是一个灿烂的时代。&lt;br&gt;因你我而灿烂。&lt;/p&gt;
 &lt;h2 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;&lt;p&gt;很抱歉前文莫名写的很抽象，最后只好拼接一点“微干”的：&lt;br&gt;关于学习，坚持一个目标两条路线即可。&lt;br&gt;一个长远的学习目标，2、5、10年后想做什么，那么我需要哪些技术？&lt;br&gt;一条隐含的内线，长期坚持学习基本功，像数学、算法、英文之类的，取决于目标&lt;br&gt;一条明确的外线，短期而高效的目标，像各种框架的使用、Redis、MQ之类的，取决于目标&lt;br&gt;两条线并行。&lt;/p&gt;
