@@ -1,5 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 小伙伴们的Git工作流 · 蝉羽</title><meta name="description" content="小伙伴们的Git工作流 - 殇月陨"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/dm4157" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><style>.archive .post-time {width:120px}</style><div class="post"><article class="post-block"><h1 class="post-title">小伙伴们的Git工作流</h1><div class="post-time">2017年3月6日</div><div class="post-content"><h1 id="小伙伴们的Git工作流"><a href="#小伙伴们的Git工作流" class="headerlink" title="小伙伴们的Git工作流"></a>小伙伴们的Git工作流</h1><p>[TOC]</p>
-<h2 id="分支组成"><a href="#分支组成" class="headerlink" title="分支组成"></a>分支组成</h2><h3 id="master"><a href="#master" class="headerlink" title="master"></a>master</h3><p>这是一个神圣的分支，不允许亵渎。</p>
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 小伙伴们的Git工作流 · 蝉羽</title><meta name="description" content="小伙伴们的Git工作流 - 殇月陨"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/dm4157" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><style>.archive .post-time {width:120px}</style><div class="post"><article class="post-block"><h1 class="post-title">小伙伴们的Git工作流</h1><div class="post-time">2017年3月6日</div><div class="post-content"><h2 id="分支组成"><a href="#分支组成" class="headerlink" title="分支组成"></a>分支组成</h2><h3 id="master"><a href="#master" class="headerlink" title="master"></a>master</h3><p>这是一个神圣的分支，不允许亵渎。</p>
 <ul>
 <li>不接受直接提交</li>
 <li>变动应全部来自 <code>merge</code></li>
@@ -14,7 +13,7 @@
 </ul>
 <h3 id="feature"><a href="#feature" class="headerlink" title="feature"></a>feature</h3><p>需求分支， 根据需求划分并从 <strong>dev</strong> 分支上检出。一般的在迭代开始我们会新建一些 <strong>feature</strong>.</p>
 <ul>
-<li>命名推荐使用英文关键字，下划线打底：sync_property_building_year</li>
+<li>命名推荐使用英文关键字，下划线打底：<em>sync_property_building_year</em></li>
 <li>从 <strong>dev</strong> 上检出</li>
 <li>按需求划分</li>
 <li>开发完成后直接测试，复杂情况参考 <strong>release</strong></li>
@@ -27,7 +26,7 @@
 <ul>
 <li>测试冲突的分支都要上线</li>
 <li>根据哪个 <strong>feature</strong> 首次创建 <strong>release</strong>？ 在选择上没什么道理的推荐使用改动量较多的分支作为 <strong>release</strong> 的基础 ，其他分支并入</li>
-<li>命名推荐使用 release 加上线日：release_20170405</li>
+<li>命名推荐使用 release 加上线日：<em>release_20170405</em></li>
 <li>周期结束删除</li>
 </ul>
 <h3 id="hotfix"><a href="#hotfix" class="headerlink" title="hotfix"></a>hotfix</h3><p>特殊情况下使用， 专治各种不服。</p>
@@ -36,7 +35,8 @@
 <ul>
 <li>紧急情况下灵活使用，原则是注意前置代码。</li>
 <li>修改后一定要分别合并到 <strong>dev</strong> 和 <strong>master</strong></li>
-<li>谁建立谁负责，谁合并谁删除</li>
+<li>命名推荐使用 hotfix 加英文关键词： <em>hotfix_add_source</em></li>
+<li>使用后删除</li>
 </ul>
 <h2 id="我们的约定"><a href="#我们的约定" class="headerlink" title="我们的约定"></a>我们的约定</h2><p>在上一个上线日结束到下一个上线日结束之间，称为一个 <strong>Git开发周期</strong>。</p>
 <h3 id="GIT开发周期"><a href="#GIT开发周期" class="headerlink" title="GIT开发周期"></a>GIT开发周期</h3><p>周期包括分支开发、上线计划、上线准备几个阶段。</p>
@@ -61,6 +61,10 @@
 <p>如果 <strong>F2</strong> 很着急，那么将 <strong>F1</strong> 中涉及数据库表结构改动的代码 <strong>commit</strong> 通过 <code>cherry pick</code> 方式复制到 <strong>F2</strong> 中。</p>
 <p><img src="http://7xrbi6.com1.z0.glb.clouddn.com/git-1.JPG" alt="分支影响"></p>
 <h4 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h4><p>遇到特殊情况可以喊小伙伴们一起帮忙~</p>
+<h3 id="操作人"><a href="#操作人" class="headerlink" title="操作人"></a>操作人</h3><p>创建 <strong>feature</strong> 由 <code>开发</code> 完成</p>
+<p>将 <strong>feature</strong> 合并到 <strong>dev</strong> 由 <code>测试</code> 完成， <code>开发</code> 辅助</p>
+<p>将 <strong>dev</strong> 合并到 <strong>master</strong> 并打 <strong>Tag</strong> 由 <code>测试</code> 完成</p>
+<p><strong>hotfix</strong> 相关操作原则： 谁创建谁负责，谁合并谁删除</p>
 </div></article></div></section><footer><div class="paginator"><a href="/2016/12/08/git指南/" class="next">下一篇</a></div><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["weixin","tieba","sqq","youdao","evernotecn","copy","print"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 <style>.ds-meta{display:none}</style><div data-thread-key="2017/03/06/GIT 分支实践 - 实验版/" data-title="小伙伴们的Git工作流" data-url="http://dm4157.github.io/2017/03/06/GIT 分支实践 - 实验版/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"msdg"};

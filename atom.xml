@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dm4157.github.io/"/>
-  <updated>2017-04-08T08:33:30.000Z</updated>
+  <updated>2017-04-08T08:46:01.000Z</updated>
   <id>http://dm4157.github.io/</id>
   
   <author>
@@ -20,10 +20,9 @@
     <link href="http://dm4157.github.io/2017/03/06/GIT%20%E5%88%86%E6%94%AF%E5%AE%9E%E8%B7%B5%20-%20%E5%AE%9E%E9%AA%8C%E7%89%88/"/>
     <id>http://dm4157.github.io/2017/03/06/GIT 分支实践 - 实验版/</id>
     <published>2017-03-06T08:13:51.000Z</published>
-    <updated>2017-04-08T08:33:30.000Z</updated>
+    <updated>2017-04-08T08:46:01.000Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;小伙伴们的Git工作流&quot;&gt;&lt;a href=&quot;#小伙伴们的Git工作流&quot; class=&quot;headerlink&quot; title=&quot;小伙伴们的Git工作流&quot;&gt;&lt;/a&gt;小伙伴们的Git工作流&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;分支组成&quot;&gt;&lt;a href=&quot;#分支组成&quot; class=&quot;headerlink&quot; title=&quot;分支组成&quot;&gt;&lt;/a&gt;分支组成&lt;/h2&gt;&lt;h3 id=&quot;master&quot;&gt;&lt;a href=&quot;#master&quot; class=&quot;headerlink&quot; title=&quot;master&quot;&gt;&lt;/a&gt;master&lt;/h3&gt;&lt;p&gt;这是一个神圣的分支，不允许亵渎。&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;分支组成&quot;&gt;&lt;a href=&quot;#分支组成&quot; class=&quot;headerlink&quot; title=&quot;分支组成&quot;&gt;&lt;/a&gt;分支组成&lt;/h2&gt;&lt;h3 id=&quot;master&quot;&gt;&lt;a href=&quot;#master&quot; class=&quot;headerlink&quot; title=&quot;master&quot;&gt;&lt;/a&gt;master&lt;/h3&gt;&lt;p&gt;这是一个神圣的分支，不允许亵渎。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;不接受直接提交&lt;/li&gt;
 &lt;li&gt;变动应全部来自 &lt;code&gt;merge&lt;/code&gt;&lt;/li&gt;
@@ -38,7 +37,7 @@
 &lt;/ul&gt;
 &lt;h3 id=&quot;feature&quot;&gt;&lt;a href=&quot;#feature&quot; class=&quot;headerlink&quot; title=&quot;feature&quot;&gt;&lt;/a&gt;feature&lt;/h3&gt;&lt;p&gt;需求分支， 根据需求划分并从 &lt;strong&gt;dev&lt;/strong&gt; 分支上检出。一般的在迭代开始我们会新建一些 &lt;strong&gt;feature&lt;/strong&gt;.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;命名推荐使用英文关键字，下划线打底：sync_property_building_year&lt;/li&gt;
+&lt;li&gt;命名推荐使用英文关键字，下划线打底：&lt;em&gt;sync_property_building_year&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;从 &lt;strong&gt;dev&lt;/strong&gt; 上检出&lt;/li&gt;
 &lt;li&gt;按需求划分&lt;/li&gt;
 &lt;li&gt;开发完成后直接测试，复杂情况参考 &lt;strong&gt;release&lt;/strong&gt;&lt;/li&gt;
@@ -51,7 +50,7 @@
 &lt;ul&gt;
 &lt;li&gt;测试冲突的分支都要上线&lt;/li&gt;
 &lt;li&gt;根据哪个 &lt;strong&gt;feature&lt;/strong&gt; 首次创建 &lt;strong&gt;release&lt;/strong&gt;？ 在选择上没什么道理的推荐使用改动量较多的分支作为 &lt;strong&gt;release&lt;/strong&gt; 的基础 ，其他分支并入&lt;/li&gt;
-&lt;li&gt;命名推荐使用 release 加上线日：release_20170405&lt;/li&gt;
+&lt;li&gt;命名推荐使用 release 加上线日：&lt;em&gt;release_20170405&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;周期结束删除&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;hotfix&quot;&gt;&lt;a href=&quot;#hotfix&quot; class=&quot;headerlink&quot; title=&quot;hotfix&quot;&gt;&lt;/a&gt;hotfix&lt;/h3&gt;&lt;p&gt;特殊情况下使用， 专治各种不服。&lt;/p&gt;
@@ -60,7 +59,8 @@
 &lt;ul&gt;
 &lt;li&gt;紧急情况下灵活使用，原则是注意前置代码。&lt;/li&gt;
 &lt;li&gt;修改后一定要分别合并到 &lt;strong&gt;dev&lt;/strong&gt; 和 &lt;strong&gt;master&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;谁建立谁负责，谁合并谁删除&lt;/li&gt;
+&lt;li&gt;命名推荐使用 hotfix 加英文关键词： &lt;em&gt;hotfix_add_source&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用后删除&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;我们的约定&quot;&gt;&lt;a href=&quot;#我们的约定&quot; class=&quot;headerlink&quot; title=&quot;我们的约定&quot;&gt;&lt;/a&gt;我们的约定&lt;/h2&gt;&lt;p&gt;在上一个上线日结束到下一个上线日结束之间，称为一个 &lt;strong&gt;Git开发周期&lt;/strong&gt;。&lt;/p&gt;
 &lt;h3 id=&quot;GIT开发周期&quot;&gt;&lt;a href=&quot;#GIT开发周期&quot; class=&quot;headerlink&quot; title=&quot;GIT开发周期&quot;&gt;&lt;/a&gt;GIT开发周期&lt;/h3&gt;&lt;p&gt;周期包括分支开发、上线计划、上线准备几个阶段。&lt;/p&gt;
@@ -85,12 +85,15 @@
 &lt;p&gt;如果 &lt;strong&gt;F2&lt;/strong&gt; 很着急，那么将 &lt;strong&gt;F1&lt;/strong&gt; 中涉及数据库表结构改动的代码 &lt;strong&gt;commit&lt;/strong&gt; 通过 &lt;code&gt;cherry pick&lt;/code&gt; 方式复制到 &lt;strong&gt;F2&lt;/strong&gt; 中。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xrbi6.com1.z0.glb.clouddn.com/git-1.JPG&quot; alt=&quot;分支影响&quot;&gt;&lt;/p&gt;
 &lt;h4 id=&quot;特殊情况&quot;&gt;&lt;a href=&quot;#特殊情况&quot; class=&quot;headerlink&quot; title=&quot;特殊情况&quot;&gt;&lt;/a&gt;特殊情况&lt;/h4&gt;&lt;p&gt;遇到特殊情况可以喊小伙伴们一起帮忙~&lt;/p&gt;
+&lt;h3 id=&quot;操作人&quot;&gt;&lt;a href=&quot;#操作人&quot; class=&quot;headerlink&quot; title=&quot;操作人&quot;&gt;&lt;/a&gt;操作人&lt;/h3&gt;&lt;p&gt;创建 &lt;strong&gt;feature&lt;/strong&gt; 由 &lt;code&gt;开发&lt;/code&gt; 完成&lt;/p&gt;
+&lt;p&gt;将 &lt;strong&gt;feature&lt;/strong&gt; 合并到 &lt;strong&gt;dev&lt;/strong&gt; 由 &lt;code&gt;测试&lt;/code&gt; 完成， &lt;code&gt;开发&lt;/code&gt; 辅助&lt;/p&gt;
+&lt;p&gt;将 &lt;strong&gt;dev&lt;/strong&gt; 合并到 &lt;strong&gt;master&lt;/strong&gt; 并打 &lt;strong&gt;Tag&lt;/strong&gt; 由 &lt;code&gt;测试&lt;/code&gt; 完成&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;hotfix&lt;/strong&gt; 相关操作原则： 谁创建谁负责，谁合并谁删除&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;小伙伴们的Git工作流&quot;&gt;&lt;a href=&quot;#小伙伴们的Git工作流&quot; class=&quot;headerlink&quot; title=&quot;小伙伴们的Git工作流&quot;&gt;&lt;/a&gt;小伙伴们的Git工作流&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h2 id=&quot;分支组成&quot;&gt;&lt;a href=&quot;#
+      &lt;h2 id=&quot;分支组成&quot;&gt;&lt;a href=&quot;#分支组成&quot; class=&quot;headerlink&quot; title=&quot;分支组成&quot;&gt;&lt;/a&gt;分支组成&lt;/h2&gt;&lt;h3 id=&quot;master&quot;&gt;&lt;a href=&quot;#master&quot; class=&quot;headerlink&quot; title=&quot;maste
     
     </summary>
     
