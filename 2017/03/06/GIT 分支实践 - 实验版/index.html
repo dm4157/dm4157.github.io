@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 小伙伴们的Git工作流 · 蝉羽</title><meta name="description" content="小伙伴们的Git工作流 - 殇月陨"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/dm4157" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><style>.archive .post-time {width:120px}</style><div class="post"><article class="post-block"><h1 class="post-title">小伙伴们的Git工作流</h1><div class="post-time">2017年3月6日</div><div class="post-content"><h1 id="小伙伴们的Git工作流"><a href="#小伙伴们的Git工作流" class="headerlink" title="小伙伴们的Git工作流"></a>小伙伴们的Git工作流</h1><p>[TOC]</p>
+<h2 id="分支组成"><a href="#分支组成" class="headerlink" title="分支组成"></a>分支组成</h2><h3 id="master"><a href="#master" class="headerlink" title="master"></a>master</h3><p>这是一个神圣的分支，不允许亵渎。</p>
+<ul>
+<li>不接受直接提交</li>
+<li>变动应全部来自 <code>merge</code></li>
+<li>每次 <code>merge</code> 对应一个 <strong>Tag</strong> ，对应一次 <strong>上线</strong></li>
+</ul>
+<h3 id="dev"><a href="#dev" class="headerlink" title="dev"></a>dev</h3><p>全部的测试过的代码都在这里。</p>
+<ul>
+<li>拥有整个资源库 <strong>最全</strong> 的代码</li>
+<li>代码应该经过测试</li>
+<li>特殊情况下接受直接提交，原则是小改动（比如一个文件，几行代码）</li>
+<li>主要代码来源于 <code>merge</code></li>
+</ul>
+<h3 id="feature"><a href="#feature" class="headerlink" title="feature"></a>feature</h3><p>需求分支， 根据需求划分并从 <strong>dev</strong> 分支上检出。一般的在迭代开始我们会新建一些 <strong>feature</strong>.</p>
+<ul>
+<li>命名推荐使用英文关键字，下划线打底：sync_property_building_year</li>
+<li>从 <strong>dev</strong> 上检出</li>
+<li>按需求划分</li>
+<li>开发完成后直接测试，复杂情况参考 <strong>release</strong></li>
+<li>排入上线计划后，由 <strong>测试</strong> 合并到 <strong>dev</strong> , 在计划内所有 <strong>feature</strong> 都合并完后， 由 <strong>测试</strong> 合并入 <strong>master</strong></li>
+<li>周期结束删除</li>
+</ul>
+<h3 id="release"><a href="#release" class="headerlink" title="release"></a>release</h3><p>在测试 <strong>feature</strong> 时遇到 <strong>测试大大们</strong> 打架时，可以使用此分支。</p>
+<p>假设上线计划中有 <strong>F1</strong> <strong>F2</strong> <strong>F3</strong> 三个 <strong>feature</strong> ，并且同时测试，互相影响很不愉快。</p>
+<p>在确定上线的前提下，我们根据 <strong>F1</strong> 检出并创建一个 <strong>release</strong> 分支， 然后将 <strong>F2</strong> <strong>F3</strong> 都并入 <strong>release</strong> ，大家一起测试 <strong>release</strong> 分支</p>
+<ul>
+<li>测试冲突的分支都要上线</li>
+<li>根据哪个 <strong>feature</strong> 首次创建 <strong>release</strong>？ 在选择上没什么道理的推荐使用改动量较多的分支作为 <strong>release</strong> 的基础 ，其他分支并入</li>
+<li>命名推荐使用 release 加上线日：release_20170405</li>
+<li>周期结束删除</li>
+</ul>
+<h3 id="hotfix"><a href="#hotfix" class="headerlink" title="hotfix"></a>hotfix</h3><p>特殊情况下使用， 专治各种不服。</p>
+<p>使用条件：因 <strong>BUG</strong> 而紧急修复；因 <strong>政策</strong> 而紧急发布；其他。</p>
+<p>使用方法：直接从 <strong>master</strong> 检出，修改测试后合并回 <strong>dev</strong> 和 <strong>master</strong> , 打 <strong>Tag</strong> 上线。</p>
+<ul>
+<li>紧急情况下灵活使用，原则是注意前置代码。</li>
+<li>修改后一定要分别合并到 <strong>dev</strong> 和 <strong>master</strong></li>
+<li>谁建立谁负责，谁合并谁删除</li>
+</ul>
+<h2 id="我们的约定"><a href="#我们的约定" class="headerlink" title="我们的约定"></a>我们的约定</h2><p>在上一个上线日结束到下一个上线日结束之间，称为一个 <strong>Git开发周期</strong>。</p>
+<h3 id="GIT开发周期"><a href="#GIT开发周期" class="headerlink" title="GIT开发周期"></a>GIT开发周期</h3><p>周期包括分支开发、上线计划、上线准备几个阶段。</p>
+<p>一般的我们遵循只在 <strong>分支开发</strong> 阶段从 <strong>dev</strong> 检出，只在 <strong>上线计划</strong> 阶段合并到 <strong>dev</strong> ， 只在 <strong>上线准备</strong> 阶段合并到 <strong>master</strong> ，不遵循此原则时应当考虑是否需要使用 <strong>hotfix</strong> 。</p>
+<h4 id="分支开发"><a href="#分支开发" class="headerlink" title="分支开发"></a>分支开发</h4><p>周期开始时从 <strong>dev</strong> 按照 <em>每个需求一个分支</em> 的原则创建新的 <strong>feature</strong> 分支，独立开发并测试。测试完成后保持分支不变，不立刻做合并 <strong>dev</strong> 的动作。</p>
+<h4 id="上线计划"><a href="#上线计划" class="headerlink" title="上线计划"></a>上线计划</h4><p>通常在上线日前一天，确定项目的上线计划（如果能更早确定则更好）。上线计划确定本次要上线的分支，并由 <strong>测试同学</strong> 将计划中的分支合并到 <strong>dev</strong> 上进行集成测试。集成测试结束即表示进入下一阶段。</p>
+<h4 id="上线准备"><a href="#上线准备" class="headerlink" title="上线准备"></a>上线准备</h4><p>集成测试后由 <strong>测试同学</strong> 将 <strong>dev</strong> 合并到 <strong>master</strong> 并打 <strong>Tag</strong>。修改 <strong>Jenkins</strong> 配置，准备上线单。</p>
+<p>一般的认为打 <strong>Tag</strong> 是一个 <strong>Git开发周期</strong> 的结束，表示可以开始下一个周期。</p>
+<p><img src="http://7xrbi6.com1.z0.glb.clouddn.com/git-2.JPG" alt="Git开发周期"></p>
+<h3 id="几个场景"><a href="#几个场景" class="headerlink" title="几个场景"></a>几个场景</h3><p>针对一个项目，我们考虑几种常见场景。</p>
+<blockquote>
+<p>定义几个简称：</p>
+<p>master -&gt; M    dev -&gt; D   feature -&gt; F</p>
+</blockquote>
+<h4 id="不同需求上线日期不同"><a href="#不同需求上线日期不同" class="headerlink" title="不同需求上线日期不同"></a>不同需求上线日期不同</h4><p>在 <strong>分支开发</strong> 阶段，我们根据需求从 <strong>dev</strong> 上检出并创建需求分支 <strong>F1</strong> <strong>F2</strong> 。<strong>F1</strong> 要在本周一上线， <strong>F2</strong> 要在本周三上线。</p>
+<p>首先，<strong>F1</strong> <strong>F2</strong> 各自开发并完成测试。因为这个 <strong>上线计划</strong> 已经明确：上线 <strong>F1</strong>， 所以只向 <strong>dev</strong> 合并 <strong>F1</strong> , 确认无误后合并到 <strong>master</strong> 并打 <strong>Tag</strong>， 之后就可以将下个 <strong>上线计划</strong> 要上线的 <strong>F2</strong> 合并到 <strong>dev</strong>了。</p>
+<blockquote>
+<p>可参见开发周期图。</p>
+</blockquote>
+<h4 id="不同需求同一个应用，-但是某个需求动了基础的表结构"><a href="#不同需求同一个应用，-但是某个需求动了基础的表结构" class="headerlink" title="不同需求同一个应用， 但是某个需求动了基础的表结构"></a>不同需求同一个应用， 但是某个需求动了基础的表结构</h4><p>在 <strong>分支开发</strong> 阶段，我们根据需求从 <strong>dev</strong> 上检出并创建需求分支 <strong>F1</strong> <strong>F2</strong> 。在 <strong>F1</strong> 开发过程中需要变更数据库表结构，导致 <strong>F2</strong> 分支的代码无法正常运行，这种情况下怎么办呢？</p>
+<p>如果 <strong>F2</strong> 开发可以等到 <strong>F1</strong> 开发完毕并测试完毕，那么将测试完毕的 <strong>F1</strong> 合并到 <strong>F2</strong></p>
+<p>如果 <strong>F2</strong> 很着急，那么将 <strong>F1</strong> 中涉及数据库表结构改动的代码 <strong>commit</strong> 通过 <code>cherry pick</code> 方式复制到 <strong>F2</strong> 中。</p>
+<p><img src="http://7xrbi6.com1.z0.glb.clouddn.com/git-1.JPG" alt="分支影响"></p>
+<h4 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h4><p>遇到特殊情况可以喊小伙伴们一起帮忙~</p>
+</div></article></div></section><footer><div class="paginator"><a href="/2016/12/08/git指南/" class="next">下一篇</a></div><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["weixin","tieba","sqq","youdao","evernotecn","copy","print"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<style>.ds-meta{display:none}</style><div data-thread-key="2017/03/06/GIT 分支实践 - 实验版/" data-title="小伙伴们的Git工作流" data-url="http://dm4157.github.io/2017/03/06/GIT 分支实践 - 实验版/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"msdg"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script><div class="copyright"><p>© 2016 - 2017 <a href="http://dm4157.github.io">殇月陨</a>, 慕斯蛋糕@4157.</p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-74694817-1",'auto');ga('send','pageview');</script><script src="https://cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
