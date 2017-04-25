@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dm4157.github.io/"/>
-  <updated>2017-04-08T08:46:01.000Z</updated>
+  <updated>2017-04-25T10:40:29.000Z</updated>
   <id>http://dm4157.github.io/</id>
   
   <author>
@@ -16,11 +16,103 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>小伙伴们的Git工作流</title>
+    <title>小伙伴们的Git Flow - 测试保障版</title>
+    <link href="http://dm4157.github.io/2017/04/25/%E5%B0%8F%E4%BC%99%E4%BC%B4%E4%BB%AC%E7%9A%84Git%20Flow%20-%20%E6%B5%8B%E8%AF%95%E4%BF%9D%E9%9A%9C%E7%89%88/"/>
+    <id>http://dm4157.github.io/2017/04/25/小伙伴们的Git Flow - 测试保障版/</id>
+    <published>2017-04-25T10:39:14.000Z</published>
+    <updated>2017-04-25T10:40:29.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;分支组成&quot;&gt;&lt;a href=&quot;#分支组成&quot; class=&quot;headerlink&quot; title=&quot;分支组成&quot;&gt;&lt;/a&gt;分支组成&lt;/h2&gt;&lt;h3 id=&quot;master&quot;&gt;&lt;a href=&quot;#master&quot; class=&quot;headerlink&quot; title=&quot;master&quot;&gt;&lt;/a&gt;master&lt;/h3&gt;&lt;p&gt;这是一个神圣的分支，不可亵渎。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不接受直接提交&lt;/li&gt;
+&lt;li&gt;变动应全部来自 &lt;em&gt;merge&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;每次 &lt;em&gt;merge&lt;/em&gt; 对应一个 &lt;strong&gt;Tag&lt;/strong&gt; ，对应一次 &lt;strong&gt;上线&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;release&quot;&gt;&lt;a href=&quot;#release&quot; class=&quot;headerlink&quot; title=&quot;release&quot;&gt;&lt;/a&gt;release&lt;/h3&gt;&lt;p&gt;全部的测试过的代码都在这里。相对于 &lt;strong&gt;master&lt;/strong&gt; 多了一些下次上线的代码。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;代码应该经过测试&lt;/li&gt;
+&lt;li&gt;代码来源于 &lt;code&gt;merge&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;持久的，不删除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;feature&quot;&gt;&lt;a href=&quot;#feature&quot; class=&quot;headerlink&quot; title=&quot;feature&quot;&gt;&lt;/a&gt;feature&lt;/h3&gt;&lt;p&gt;需求分支， 根据需求划分并从 &lt;strong&gt;release&lt;/strong&gt; 分支上检出。一般的在迭代开始我们会新建一些 &lt;strong&gt;feature&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;命名推荐使用英文关键字，下划线打底：sync_property_building_year&lt;/li&gt;
+&lt;li&gt;从 &lt;strong&gt;release&lt;/strong&gt; 上检出&lt;/li&gt;
+&lt;li&gt;按需求划分&lt;/li&gt;
+&lt;li&gt;开发完成并 &lt;em&gt;CodeReview&lt;/em&gt; 后由 &lt;code&gt;开发&lt;/code&gt; 合并到 &lt;strong&gt;test&lt;/strong&gt; 提测。&lt;/li&gt;
+&lt;li&gt;排入上线计划后，由 &lt;code&gt;测试&lt;/code&gt; 合并到 &lt;strong&gt;release&lt;/strong&gt; , 在计划内所有 &lt;strong&gt;feature&lt;/strong&gt; 都合并完后，集成测试然后由 &lt;code&gt;测试&lt;/code&gt; 合并入 &lt;strong&gt;master&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;周期结束删除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;test&quot;&gt;&lt;a href=&quot;#test&quot; class=&quot;headerlink&quot; title=&quot;test&quot;&gt;&lt;/a&gt;test&lt;/h3&gt;&lt;p&gt;部署在 &lt;em&gt;Jenkins&lt;/em&gt; 上的分支，&lt;strong&gt;feature&lt;/strong&gt; 开发完成后将代码合并到此分支。因此，&lt;em&gt;Jenkins&lt;/em&gt; 上不需要变动分支，也不存在测试冲突问题。当测试出现 &lt;em&gt;bug&lt;/em&gt; ，&lt;code&gt;开发&lt;/code&gt; 应在对应的 &lt;strong&gt;feature&lt;/strong&gt; 分支上修改，并合并到 &lt;strong&gt;test&lt;/strong&gt; 分支验证。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;测试&lt;/code&gt; 的专属分支&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Jenkins&lt;/em&gt; 上常规部署分支&lt;/li&gt;
+&lt;li&gt;由 &lt;code&gt;开发&lt;/code&gt; 从 &lt;strong&gt;feature&lt;/strong&gt; 上合并代码，由 &lt;code&gt;测试&lt;/code&gt; 部署验证&lt;/li&gt;
+&lt;li&gt;持久的，不删除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;hotfix&quot;&gt;&lt;a href=&quot;#hotfix&quot; class=&quot;headerlink&quot; title=&quot;hotfix&quot;&gt;&lt;/a&gt;hotfix&lt;/h3&gt;&lt;p&gt;特殊情况下使用， 专治各种不服。&lt;/p&gt;
+&lt;p&gt;使用条件：因 &lt;em&gt;BUG&lt;/em&gt; 而紧急修复；因 &lt;em&gt;政策&lt;/em&gt; 而紧急发布；其他。&lt;/p&gt;
+&lt;p&gt;使用方法：直接从 &lt;strong&gt;master&lt;/strong&gt; 检出，修改测试后合并回 &lt;strong&gt;test&lt;/strong&gt;  、&lt;strong&gt;release&lt;/strong&gt; 和 &lt;strong&gt;master&lt;/strong&gt; , 打 &lt;strong&gt;Tag&lt;/strong&gt; 上线。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;紧急情况下灵活使用，原则是注意前置代码。&lt;/li&gt;
+&lt;li&gt;修改后一定要分别合并到 &lt;strong&gt;test&lt;/strong&gt; 、 &lt;strong&gt;release&lt;/strong&gt; 和 &lt;strong&gt;master&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;命名推荐使用 hotfix 加英文关键词： &lt;em&gt;hotfix_add_source&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;测试时在 &lt;em&gt;Jenkins&lt;/em&gt; 上直接部署 &lt;strong&gt;hotfix&lt;/strong&gt; 分支并完成测试&lt;/li&gt;
+&lt;li&gt;使用后删除&lt;/li&gt;
+&lt;li&gt;上线日当晚修改可跳过 &lt;strong&gt;hotfix&lt;/strong&gt; 直接在 &lt;strong&gt;master&lt;/strong&gt; 上修改，发布无误后打 &lt;strong&gt;Tag&lt;/strong&gt; 并将 &lt;strong&gt;master&lt;/strong&gt; 合并到 &lt;strong&gt;release&lt;/strong&gt; 和 &lt;strong&gt;test&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;我们的约定&quot;&gt;&lt;a href=&quot;#我们的约定&quot; class=&quot;headerlink&quot; title=&quot;我们的约定&quot;&gt;&lt;/a&gt;我们的约定&lt;/h2&gt;&lt;p&gt;在上一个上线日结束到下一个上线日结束之间，称为一个 &lt;em&gt;Git开发周期&lt;/em&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;定义几个简称：&lt;/p&gt;
+&lt;p&gt;master -&amp;gt; M    release -&amp;gt; D(因为后面改名了，图中简称就不换了)   feature -&amp;gt; F&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;GIT开发周期&quot;&gt;&lt;a href=&quot;#GIT开发周期&quot; class=&quot;headerlink&quot; title=&quot;GIT开发周期&quot;&gt;&lt;/a&gt;GIT开发周期&lt;/h3&gt;&lt;p&gt;周期包括分支开发、集中测试、上线计划、上线准备几个阶段。&lt;/p&gt;
+&lt;p&gt;一般的我们遵循只在 &lt;em&gt;分支开发&lt;/em&gt; 阶段从 &lt;strong&gt;release&lt;/strong&gt; 检出，只在 &lt;em&gt;上线计划&lt;/em&gt; 阶段合并到 &lt;strong&gt;release&lt;/strong&gt; ， 只在 &lt;em&gt;上线准备&lt;/em&gt; 阶段合并到 &lt;strong&gt;master&lt;/strong&gt; ，不遵循此原则时应当考虑是否需要使用 &lt;strong&gt;hotfix&lt;/strong&gt; 。&lt;/p&gt;
+&lt;h4 id=&quot;分支开发&quot;&gt;&lt;a href=&quot;#分支开发&quot; class=&quot;headerlink&quot; title=&quot;分支开发&quot;&gt;&lt;/a&gt;分支开发&lt;/h4&gt;&lt;p&gt;周期开始时从 &lt;strong&gt;release&lt;/strong&gt; 按照 &lt;em&gt;每个需求一个分支&lt;/em&gt; 的原则创建新的 &lt;strong&gt;feature&lt;/strong&gt; 分支，独立开发。&lt;/p&gt;
+&lt;h4 id=&quot;分支测试&quot;&gt;&lt;a href=&quot;#分支测试&quot; class=&quot;headerlink&quot; title=&quot;分支测试&quot;&gt;&lt;/a&gt;分支测试&lt;/h4&gt;&lt;p&gt;开发完成并且 &lt;em&gt;CodeReview&lt;/em&gt; 后由 &lt;code&gt;开发&lt;/code&gt; 合并到 &lt;strong&gt;test&lt;/strong&gt; 分支，由 &lt;code&gt;测试&lt;/code&gt; 部署验证。出现 &lt;em&gt;bug&lt;/em&gt; 后 &lt;code&gt;开发&lt;/code&gt; 在对应的 &lt;strong&gt;feature&lt;/strong&gt; 分支上修复 &lt;em&gt;bug&lt;/em&gt;，并将改动后的代码合并到 &lt;strong&gt;test&lt;/strong&gt; 分支， 由 &lt;code&gt;测试&lt;/code&gt; 验证，直到完成测试。&lt;/p&gt;
+&lt;p&gt;测试完成后保持 &lt;strong&gt;feature&lt;/strong&gt; 分支不变，不立刻做合并 &lt;strong&gt;release&lt;/strong&gt; 的动作。&lt;/p&gt;
+&lt;h4 id=&quot;上线计划&quot;&gt;&lt;a href=&quot;#上线计划&quot; class=&quot;headerlink&quot; title=&quot;上线计划&quot;&gt;&lt;/a&gt;上线计划&lt;/h4&gt;&lt;p&gt;通常在上线日前一天，确定项目的上线计划（如果能更早确定则更好）。上线计划确定本次要上线的分支，并由 &lt;code&gt;测试&lt;/code&gt; 将计划中的分支合并到 &lt;strong&gt;release&lt;/strong&gt; 上进行集成测试。集成测试结束即表示进入下一阶段。&lt;/p&gt;
+&lt;h4 id=&quot;上线准备&quot;&gt;&lt;a href=&quot;#上线准备&quot; class=&quot;headerlink&quot; title=&quot;上线准备&quot;&gt;&lt;/a&gt;上线准备&lt;/h4&gt;&lt;p&gt;集成测试后由 &lt;code&gt;测试&lt;/code&gt;  将 &lt;strong&gt;release&lt;/strong&gt; 合并到 &lt;strong&gt;master&lt;/strong&gt; 并打 &lt;strong&gt;Tag&lt;/strong&gt;。修改 &lt;strong&gt;Jenkins&lt;/strong&gt; 配置，准备上线单。&lt;/p&gt;
+&lt;p&gt;一般的认为打 &lt;strong&gt;Tag&lt;/strong&gt; 是一个 &lt;strong&gt;Git开发周期&lt;/strong&gt; 的结束，表示可以开始下一个周期。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrbi6.com1.z0.glb.clouddn.com/git-t20.JPG&quot; alt=&quot;周期&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;几个场景&quot;&gt;&lt;a href=&quot;#几个场景&quot; class=&quot;headerlink&quot; title=&quot;几个场景&quot;&gt;&lt;/a&gt;几个场景&lt;/h3&gt;&lt;p&gt;针对一个项目，我们考虑几种常见场景。&lt;/p&gt;
+&lt;h4 id=&quot;不同需求上线日期不同&quot;&gt;&lt;a href=&quot;#不同需求上线日期不同&quot; class=&quot;headerlink&quot; title=&quot;不同需求上线日期不同&quot;&gt;&lt;/a&gt;不同需求上线日期不同&lt;/h4&gt;&lt;p&gt;在 &lt;strong&gt;分支开发&lt;/strong&gt; 阶段，我们根据需求从 &lt;strong&gt;release&lt;/strong&gt; 上检出并创建需求分支 &lt;strong&gt;F1&lt;/strong&gt; &lt;strong&gt;F2&lt;/strong&gt; 。&lt;strong&gt;F1&lt;/strong&gt; 要在本周一上线， &lt;strong&gt;F2&lt;/strong&gt; 要在本周三上线。&lt;/p&gt;
+&lt;p&gt;首先，&lt;strong&gt;F1&lt;/strong&gt; &lt;strong&gt;F2&lt;/strong&gt; 各自开发。当 &lt;strong&gt;F1&lt;/strong&gt; &lt;strong&gt;F2&lt;/strong&gt; 提测后就将其合并到 &lt;strong&gt;test&lt;/strong&gt; 分支测试。测试完成后根据确定的上线计划：上线 &lt;strong&gt;F1&lt;/strong&gt;， 向 &lt;strong&gt;release&lt;/strong&gt; 合并 &lt;strong&gt;F1&lt;/strong&gt; , 确认无误后合并到 &lt;strong&gt;master&lt;/strong&gt; 并打 &lt;strong&gt;Tag&lt;/strong&gt;， 之后就可以将下个 &lt;strong&gt;上线计划&lt;/strong&gt; 要上线的 &lt;strong&gt;F2&lt;/strong&gt; 合并到 &lt;strong&gt;release&lt;/strong&gt;了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可参见开发周期图。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;不同需求同一个应用，-但是某个需求动了基础的表结构&quot;&gt;&lt;a href=&quot;#不同需求同一个应用，-但是某个需求动了基础的表结构&quot; class=&quot;headerlink&quot; title=&quot;不同需求同一个应用， 但是某个需求动了基础的表结构&quot;&gt;&lt;/a&gt;不同需求同一个应用， 但是某个需求动了基础的表结构&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;或者类似的公共区域，影响了其他分支&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在 &lt;strong&gt;分支开发&lt;/strong&gt; 阶段，我们根据需求从 &lt;strong&gt;release&lt;/strong&gt; 上检出并创建需求分支 &lt;strong&gt;F1&lt;/strong&gt; &lt;strong&gt;F2&lt;/strong&gt; 。在 &lt;strong&gt;F1&lt;/strong&gt; 开发过程中需要变更数据库表结构，导致 &lt;strong&gt;F2&lt;/strong&gt; 分支的代码无法正常运行，这种情况下怎么办呢？&lt;/p&gt;
+&lt;p&gt;如果 &lt;strong&gt;F2&lt;/strong&gt; 开发可以等到 &lt;strong&gt;F1&lt;/strong&gt; 开发完毕并测试完毕，那么将测试完毕的 &lt;strong&gt;F1&lt;/strong&gt; 合并到 &lt;strong&gt;F2&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;如果 &lt;strong&gt;F2&lt;/strong&gt; 很着急，那么将 &lt;strong&gt;F1&lt;/strong&gt; 中涉及数据库表结构改动的代码 &lt;strong&gt;commit&lt;/strong&gt; 通过 &lt;code&gt;cherry pick&lt;/code&gt; 方式复制到 &lt;strong&gt;F2&lt;/strong&gt; 中。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrbi6.com1.z0.glb.clouddn.com/git-t1.JPG&quot; alt=&quot;分支影响&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;特殊情况&quot;&gt;&lt;a href=&quot;#特殊情况&quot; class=&quot;headerlink&quot; title=&quot;特殊情况&quot;&gt;&lt;/a&gt;特殊情况&lt;/h4&gt;&lt;p&gt;遇到特殊情况可以喊小伙伴们一起帮忙~&lt;/p&gt;
+&lt;h3 id=&quot;操作人&quot;&gt;&lt;a href=&quot;#操作人&quot; class=&quot;headerlink&quot; title=&quot;操作人&quot;&gt;&lt;/a&gt;操作人&lt;/h3&gt;&lt;p&gt;创建 &lt;strong&gt;feature&lt;/strong&gt; 由 &lt;code&gt;开发&lt;/code&gt; 完成&lt;/p&gt;
+&lt;p&gt;将 &lt;strong&gt;feature&lt;/strong&gt; 合并到 &lt;strong&gt;test&lt;/strong&gt; 由 &lt;code&gt;开发&lt;/code&gt; 完成&lt;/p&gt;
+&lt;p&gt;将 &lt;strong&gt;feature&lt;/strong&gt; 合并到 &lt;strong&gt;release&lt;/strong&gt; 由 &lt;code&gt;测试&lt;/code&gt; 完成， &lt;code&gt;开发&lt;/code&gt; 辅助&lt;/p&gt;
+&lt;p&gt;将 &lt;strong&gt;release&lt;/strong&gt; 合并到 &lt;strong&gt;master&lt;/strong&gt; 并打 &lt;strong&gt;Tag&lt;/strong&gt; 由 &lt;code&gt;测试&lt;/code&gt; 完成&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;hotfix&lt;/strong&gt; 相关操作原则： 谁创建谁负责，谁合并谁删除&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;分支组成&quot;&gt;&lt;a href=&quot;#分支组成&quot; class=&quot;headerlink&quot; title=&quot;分支组成&quot;&gt;&lt;/a&gt;分支组成&lt;/h2&gt;&lt;h3 id=&quot;master&quot;&gt;&lt;a href=&quot;#master&quot; class=&quot;headerlink&quot; title=&quot;maste
+    
+    </summary>
+    
+      <category term="git" scheme="http://dm4157.github.io/categories/git/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>小伙伴们的Git Flow</title>
     <link href="http://dm4157.github.io/2017/03/06/GIT%20%E5%88%86%E6%94%AF%E5%AE%9E%E8%B7%B5%20-%20%E5%AE%9E%E9%AA%8C%E7%89%88/"/>
     <id>http://dm4157.github.io/2017/03/06/GIT 分支实践 - 实验版/</id>
     <published>2017-03-06T08:13:51.000Z</published>
-    <updated>2017-04-08T08:46:01.000Z</updated>
+    <updated>2017-04-25T10:39:44.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;分支组成&quot;&gt;&lt;a href=&quot;#分支组成&quot; class=&quot;headerlink&quot; title=&quot;分支组成&quot;&gt;&lt;/a&gt;分支组成&lt;/h2&gt;&lt;h3 id=&quot;master&quot;&gt;&lt;a href=&quot;#master&quot; class=&quot;headerlink&quot; title=&quot;master&quot;&gt;&lt;/a&gt;master&lt;/h3&gt;&lt;p&gt;这是一个神圣的分支，不允许亵渎。&lt;/p&gt;
 &lt;ul&gt;
