@@ -4,9 +4,9 @@
   <subtitle>学习之道</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://blog.msdg.party/"/>
+  <link href="http://dm4157.github.io/"/>
   <updated>2017-07-25T06:51:07.000Z</updated>
-  <id>http://blog.msdg.party/</id>
+  <id>http://dm4157.github.io/</id>
   
   <author>
     <name>殇月陨</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>小伙伴们的Git Flow(测试保障版)</title>
-    <link href="http://blog.msdg.party/2017/04/25/git4/"/>
-    <id>http://blog.msdg.party/2017/04/25/git4/</id>
+    <link href="http://dm4157.github.io/2017/04/25/git4/"/>
+    <id>http://dm4157.github.io/2017/04/25/git4/</id>
     <published>2017-04-25T10:39:14.000Z</published>
     <updated>2017-07-25T06:51:07.000Z</updated>
     
@@ -82,19 +82,19 @@
     
     </summary>
     
-      <category term="teamwork" scheme="http://blog.msdg.party/categories/teamwork/"/>
+      <category term="teamwork" scheme="http://dm4157.github.io/categories/teamwork/"/>
     
     
-      <category term="git" scheme="http://blog.msdg.party/tags/git/"/>
+      <category term="git" scheme="http://dm4157.github.io/tags/git/"/>
     
-      <category term="team" scheme="http://blog.msdg.party/tags/team/"/>
+      <category term="team" scheme="http://dm4157.github.io/tags/team/"/>
     
   </entry>
   
   <entry>
     <title>小伙伴们的Git Flow(实验室版)</title>
-    <link href="http://blog.msdg.party/2017/03/06/git3/"/>
-    <id>http://blog.msdg.party/2017/03/06/git3/</id>
+    <link href="http://dm4157.github.io/2017/03/06/git3/"/>
+    <id>http://dm4157.github.io/2017/03/06/git3/</id>
     <published>2017-03-06T08:13:51.000Z</published>
     <updated>2017-07-25T06:52:40.000Z</updated>
     
@@ -171,19 +171,19 @@
     
     </summary>
     
-      <category term="teamwork" scheme="http://blog.msdg.party/categories/teamwork/"/>
+      <category term="teamwork" scheme="http://dm4157.github.io/categories/teamwork/"/>
     
     
-      <category term="git" scheme="http://blog.msdg.party/tags/git/"/>
+      <category term="git" scheme="http://dm4157.github.io/tags/git/"/>
     
-      <category term="team" scheme="http://blog.msdg.party/tags/team/"/>
+      <category term="team" scheme="http://dm4157.github.io/tags/team/"/>
     
   </entry>
   
   <entry>
     <title>Mybatis 批量插入引发的血案</title>
-    <link href="http://blog.msdg.party/2016/08/06/mybatis1/"/>
-    <id>http://blog.msdg.party/2016/08/06/mybatis1/</id>
+    <link href="http://dm4157.github.io/2016/08/06/mybatis1/"/>
+    <id>http://dm4157.github.io/2016/08/06/mybatis1/</id>
     <published>2016-08-06T09:24:14.000Z</published>
     <updated>2017-07-25T06:54:16.000Z</updated>
     
@@ -225,21 +225,21 @@
     
     </summary>
     
-      <category term="web java" scheme="http://blog.msdg.party/categories/web-java/"/>
+      <category term="web java" scheme="http://dm4157.github.io/categories/web-java/"/>
     
     
-      <category term="java" scheme="http://blog.msdg.party/tags/java/"/>
+      <category term="java" scheme="http://dm4157.github.io/tags/java/"/>
     
-      <category term="db" scheme="http://blog.msdg.party/tags/db/"/>
+      <category term="db" scheme="http://dm4157.github.io/tags/db/"/>
     
-      <category term="mybatis" scheme="http://blog.msdg.party/tags/mybatis/"/>
+      <category term="mybatis" scheme="http://dm4157.github.io/tags/mybatis/"/>
     
   </entry>
   
   <entry>
     <title>参照SpringBoot的自动配置</title>
-    <link href="http://blog.msdg.party/2016/07/14/boot1/"/>
-    <id>http://blog.msdg.party/2016/07/14/boot1/</id>
+    <link href="http://dm4157.github.io/2016/07/14/boot1/"/>
+    <id>http://dm4157.github.io/2016/07/14/boot1/</id>
     <published>2016-07-14T01:50:21.000Z</published>
     <updated>2017-07-25T06:55:35.000Z</updated>
     
@@ -390,21 +390,21 @@
     
     </summary>
     
-      <category term="web java" scheme="http://blog.msdg.party/categories/web-java/"/>
+      <category term="web java" scheme="http://dm4157.github.io/categories/web-java/"/>
     
     
-      <category term="boot" scheme="http://blog.msdg.party/tags/boot/"/>
+      <category term="boot" scheme="http://dm4157.github.io/tags/boot/"/>
     
-      <category term="spring" scheme="http://blog.msdg.party/tags/spring/"/>
+      <category term="spring" scheme="http://dm4157.github.io/tags/spring/"/>
     
-      <category term="java" scheme="http://blog.msdg.party/tags/java/"/>
+      <category term="java" scheme="http://dm4157.github.io/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>Java多线程</title>
-    <link href="http://blog.msdg.party/2016/06/02/java3/"/>
-    <id>http://blog.msdg.party/2016/06/02/java3/</id>
+    <link href="http://dm4157.github.io/2016/06/02/java3/"/>
+    <id>http://dm4157.github.io/2016/06/02/java3/</id>
     <published>2016-06-02T05:11:13.000Z</published>
     <updated>2017-07-25T06:22:46.000Z</updated>
     
@@ -464,19 +464,19 @@
     
     </summary>
     
-      <category term="core java" scheme="http://blog.msdg.party/categories/core-java/"/>
+      <category term="core java" scheme="http://dm4157.github.io/categories/core-java/"/>
     
     
-      <category term="java" scheme="http://blog.msdg.party/tags/java/"/>
+      <category term="java" scheme="http://dm4157.github.io/tags/java/"/>
     
-      <category term="thread" scheme="http://blog.msdg.party/tags/thread/"/>
+      <category term="thread" scheme="http://dm4157.github.io/tags/thread/"/>
     
   </entry>
   
   <entry>
     <title>angular手札:项目实践</title>
-    <link href="http://blog.msdg.party/2016/04/19/angular2/"/>
-    <id>http://blog.msdg.party/2016/04/19/angular2/</id>
+    <link href="http://dm4157.github.io/2016/04/19/angular2/"/>
+    <id>http://dm4157.github.io/2016/04/19/angular2/</id>
     <published>2016-04-19T03:24:05.000Z</published>
     <updated>2017-07-25T07:06:09.000Z</updated>
     
@@ -535,19 +535,19 @@
     
     </summary>
     
-      <category term="font" scheme="http://blog.msdg.party/categories/font/"/>
+      <category term="font" scheme="http://dm4157.github.io/categories/font/"/>
     
     
-      <category term="angular" scheme="http://blog.msdg.party/tags/angular/"/>
+      <category term="angular" scheme="http://dm4157.github.io/tags/angular/"/>
     
-      <category term="js" scheme="http://blog.msdg.party/tags/js/"/>
+      <category term="js" scheme="http://dm4157.github.io/tags/js/"/>
     
   </entry>
   
   <entry>
     <title>angular手札:所谓语法</title>
-    <link href="http://blog.msdg.party/2016/04/10/angular1/"/>
-    <id>http://blog.msdg.party/2016/04/10/angular1/</id>
+    <link href="http://dm4157.github.io/2016/04/10/angular1/"/>
+    <id>http://dm4157.github.io/2016/04/10/angular1/</id>
     <published>2016-04-10T02:48:58.000Z</published>
     <updated>2017-07-25T06:21:46.000Z</updated>
     
@@ -672,19 +672,19 @@
     
     </summary>
     
-      <category term="font" scheme="http://blog.msdg.party/categories/font/"/>
+      <category term="font" scheme="http://dm4157.github.io/categories/font/"/>
     
     
-      <category term="angular" scheme="http://blog.msdg.party/tags/angular/"/>
+      <category term="angular" scheme="http://dm4157.github.io/tags/angular/"/>
     
-      <category term="js" scheme="http://blog.msdg.party/tags/js/"/>
+      <category term="js" scheme="http://dm4157.github.io/tags/js/"/>
     
   </entry>
   
   <entry>
     <title>类型信息</title>
-    <link href="http://blog.msdg.party/2016/03/30/java1/"/>
-    <id>http://blog.msdg.party/2016/03/30/java1/</id>
+    <link href="http://dm4157.github.io/2016/03/30/java1/"/>
+    <id>http://dm4157.github.io/2016/03/30/java1/</id>
     <published>2016-03-30T13:07:27.000Z</published>
     <updated>2017-07-25T07:09:16.000Z</updated>
     
@@ -786,19 +786,19 @@
     
     </summary>
     
-      <category term="core java" scheme="http://blog.msdg.party/categories/core-java/"/>
+      <category term="core java" scheme="http://dm4157.github.io/categories/core-java/"/>
     
     
-      <category term="java" scheme="http://blog.msdg.party/tags/java/"/>
+      <category term="java" scheme="http://dm4157.github.io/tags/java/"/>
     
-      <category term="class" scheme="http://blog.msdg.party/tags/class/"/>
+      <category term="class" scheme="http://dm4157.github.io/tags/class/"/>
     
   </entry>
   
   <entry>
     <title>碎念</title>
-    <link href="http://blog.msdg.party/2016/03/06/talk1/"/>
-    <id>http://blog.msdg.party/2016/03/06/talk1/</id>
+    <link href="http://dm4157.github.io/2016/03/06/talk1/"/>
+    <id>http://dm4157.github.io/2016/03/06/talk1/</id>
     <published>2016-03-06T02:54:26.000Z</published>
     <updated>2017-07-25T06:22:52.000Z</updated>
     
@@ -827,17 +827,17 @@
     
     </summary>
     
-      <category term="talk" scheme="http://blog.msdg.party/categories/talk/"/>
+      <category term="talk" scheme="http://dm4157.github.io/categories/talk/"/>
     
     
-      <category term="talk" scheme="http://blog.msdg.party/tags/talk/"/>
+      <category term="talk" scheme="http://dm4157.github.io/tags/talk/"/>
     
   </entry>
   
   <entry>
     <title>git小南2</title>
-    <link href="http://blog.msdg.party/2016/03/04/git2/"/>
-    <id>http://blog.msdg.party/2016/03/04/git2/</id>
+    <link href="http://dm4157.github.io/2016/03/04/git2/"/>
+    <id>http://dm4157.github.io/2016/03/04/git2/</id>
     <published>2016-03-04T08:00:50.000Z</published>
     <updated>2017-07-25T06:22:26.000Z</updated>
     
@@ -873,19 +873,19 @@
     
     </summary>
     
-      <category term="teamwork" scheme="http://blog.msdg.party/categories/teamwork/"/>
+      <category term="teamwork" scheme="http://dm4157.github.io/categories/teamwork/"/>
     
     
-      <category term="git" scheme="http://blog.msdg.party/tags/git/"/>
+      <category term="git" scheme="http://dm4157.github.io/tags/git/"/>
     
-      <category term="team" scheme="http://blog.msdg.party/tags/team/"/>
+      <category term="team" scheme="http://dm4157.github.io/tags/team/"/>
     
   </entry>
   
   <entry>
     <title>git小南1</title>
-    <link href="http://blog.msdg.party/2016/03/04/git1/"/>
-    <id>http://blog.msdg.party/2016/03/04/git1/</id>
+    <link href="http://dm4157.github.io/2016/03/04/git1/"/>
+    <id>http://dm4157.github.io/2016/03/04/git1/</id>
     <published>2016-03-04T01:13:04.000Z</published>
     <updated>2017-07-25T06:22:20.000Z</updated>
     
@@ -941,19 +941,19 @@
     
     </summary>
     
-      <category term="teamwork" scheme="http://blog.msdg.party/categories/teamwork/"/>
+      <category term="teamwork" scheme="http://dm4157.github.io/categories/teamwork/"/>
     
     
-      <category term="git" scheme="http://blog.msdg.party/tags/git/"/>
+      <category term="git" scheme="http://dm4157.github.io/tags/git/"/>
     
-      <category term="team" scheme="http://blog.msdg.party/tags/team/"/>
+      <category term="team" scheme="http://dm4157.github.io/tags/team/"/>
     
   </entry>
   
   <entry>
     <title>Excel导出</title>
-    <link href="http://blog.msdg.party/2016/03/03/java2/"/>
-    <id>http://blog.msdg.party/2016/03/03/java2/</id>
+    <link href="http://dm4157.github.io/2016/03/03/java2/"/>
+    <id>http://dm4157.github.io/2016/03/03/java2/</id>
     <published>2016-03-03T06:02:59.000Z</published>
     <updated>2017-07-25T07:12:02.000Z</updated>
     
@@ -1050,14 +1050,14 @@
     
     </summary>
     
-      <category term="core java" scheme="http://blog.msdg.party/categories/core-java/"/>
+      <category term="core java" scheme="http://dm4157.github.io/categories/core-java/"/>
     
     
-      <category term="java" scheme="http://blog.msdg.party/tags/java/"/>
+      <category term="java" scheme="http://dm4157.github.io/tags/java/"/>
     
-      <category term="excel" scheme="http://blog.msdg.party/tags/excel/"/>
+      <category term="excel" scheme="http://dm4157.github.io/tags/excel/"/>
     
-      <category term="magic" scheme="http://blog.msdg.party/tags/magic/"/>
+      <category term="magic" scheme="http://dm4157.github.io/tags/magic/"/>
     
   </entry>
   
