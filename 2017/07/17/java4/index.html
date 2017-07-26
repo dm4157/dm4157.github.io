@@ -13,8 +13,9 @@
 日常扩容是当前容量的1.5倍
 扩容时使用 System.arraycopy 复制数组，native 方法，效率很不错
 
+PS: JDK版本1.8.0_66
 
-故事的开始近期面试被问到一个问题：ArrayList是如何扩容的？在这深入了解一下其内部实现。首先要知道什么时候会触发 扩容  —– 不难想到，在添加">
+故事的开始近期面试被问到一个问题：ArrayList是如何扩容的？在这深入了解一下其内部实现。首先要知道什么时候会">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArrayList是如何扩容的">
 <meta property="og:url" content="http://dm4157.github.io/2017/07/17/java4/index.html">
@@ -26,9 +27,10 @@
 日常扩容是当前容量的1.5倍
 扩容时使用 System.arraycopy 复制数组，native 方法，效率很不错
 
+PS: JDK版本1.8.0_66
 
-故事的开始近期面试被问到一个问题：ArrayList是如何扩容的？在这深入了解一下其内部实现。首先要知道什么时候会触发 扩容  —– 不难想到，在添加">
-<meta property="og:updated_time" content="2017-07-26T07:23:45.000Z">
+故事的开始近期面试被问到一个问题：ArrayList是如何扩容的？在这深入了解一下其内部实现。首先要知道什么时候会">
+<meta property="og:updated_time" content="2017-07-26T07:51:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ArrayList是如何扩容的">
 <meta name="twitter:description" content="结论：
@@ -38,8 +40,9 @@
 日常扩容是当前容量的1.5倍
 扩容时使用 System.arraycopy 复制数组，native 方法，效率很不错
 
+PS: JDK版本1.8.0_66
 
-故事的开始近期面试被问到一个问题：ArrayList是如何扩容的？在这深入了解一下其内部实现。首先要知道什么时候会触发 扩容  —– 不难想到，在添加">
+故事的开始近期面试被问到一个问题：ArrayList是如何扩容的？在这深入了解一下其内部实现。首先要知道什么时候会">
     
     
         
@@ -170,6 +173,7 @@
 <li>日常扩容是当前容量的1.5倍</li>
 <li>扩容时使用 <code>System.arraycopy</code> 复制数组，<strong>native</strong> 方法，效率很不错</li>
 </ol>
+<p>PS: JDK版本1.8.0_66</p>
 </blockquote>
 <h2 id="故事的开始"><a href="#故事的开始" class="headerlink" title="故事的开始"></a>故事的开始</h2><p>近期面试被问到一个问题：ArrayList是如何扩容的？在这深入了解一下其内部实现。<br>首先要知道什么时候会触发 <strong>扩容</strong>  —– 不难想到，在添加元素时需要考虑容量是否足够，来看一下 <code>ArrayList</code> 的源码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Appends the specified element to the end of this list.</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@param</span> e element to be appended to this list</span><br><span class="line"> * <span class="doctag">@return</span> &lt;tt&gt;true&lt;/tt&gt; (as specified by &#123;<span class="doctag">@link</span> Collection#add&#125;)</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">    ensureCapacityInternal(size + <span class="number">1</span>);  <span class="comment">// Increments modCount!!</span></span><br><span class="line">    elementData[size++] = e;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
