@@ -573,8 +573,8 @@ body {
   background-repeat: no-repeat;
   background-size: 50px 50px;
   border-radius: 5px;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(50%);
+  filter: grayscale(50%);
 }
 #header #nav {
   letter-spacing: 0.01em;
@@ -1422,4 +1422,14 @@ a.dashang:hover {
   background-position: bottom;
   background-size: 100% 6px;
   background-image: linear-gradient(transparent, transparent 5px, #039977 5px, #039977);
+}
+#wexin {
+  margin: 0;
+  font-size: 16px;
+  opacity: 1;
+  float: none;
+}
+#wexin:hover {
+  color: #2bbc8a;
+  cursor: pointer;
 }
