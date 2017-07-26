@@ -42,6 +42,12 @@
     
 </head>
 
+<script>
+  if (! sessionStorage.getItem('welcomed')) {
+    location.href = '/welcome.html';
+    sessionStorage.setItem('welcomed', true);
+  }
+</script>
 <body>
     
     <div class="content index width mx-auto px2 my4">
@@ -184,12 +190,6 @@
 
 
 
-<script>
-	if (! sessionStorage.getItem('welcomed')) {
-		location.href = '/welcome.html';
-		sessionStorage.setItem('welcomed', true);
-	}
-</script>
 
     </div>
     
