@@ -1416,3 +1416,10 @@ pre code {
   border: 1px solid #f0f0f0;
   margin: 0 10px;
 }
+a.dashang:hover {
+  font-weight: 500;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 100% 6px;
+  background-image: linear-gradient(transparent, transparent 5px, #039977 5px, #039977);
+}
