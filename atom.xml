@@ -103,6 +103,75 @@
   </entry>
   
   <entry>
+    <title>Java内存区域</title>
+    <link href="http://dm4157.github.io/2017/07/15/java5/"/>
+    <id>http://dm4157.github.io/2017/07/15/java5/</id>
+    <published>2017-07-15T10:34:25.000Z</published>
+    <updated>2017-07-31T07:34:00.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;《深入理解Java虚拟机》第二章&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Java虚拟机在运行时会把它所管理的内存划分为若干个区域。&lt;/p&gt;
+&lt;h2 id=&quot;程序计数器&quot;&gt;&lt;a href=&quot;#程序计数器&quot; class=&quot;headerlink&quot; title=&quot;程序计数器&quot;&gt;&lt;/a&gt;程序计数器&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;较小的内存空间&lt;/li&gt;
+&lt;li&gt;线程隔离、私有&lt;/li&gt;
+&lt;li&gt;不存在OutOfMemoryError情况&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;字节码解释器工作时通过改变计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常、线程恢复等基础功能都需要依赖这个计数器完成。&lt;/p&gt;
+&lt;h2 id=&quot;虚拟机栈&quot;&gt;&lt;a href=&quot;#虚拟机栈&quot; class=&quot;headerlink&quot; title=&quot;虚拟机栈&quot;&gt;&lt;/a&gt;虚拟机栈&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;存储：方法运行时的东西&lt;/li&gt;
+&lt;li&gt;线程隔离、私有&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;每个方法执行的同时都会创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;局部变量表&lt;/strong&gt; 存放了编译期可知的各种基本数据类型（boolean、byte、char、short、int、float、long、double）、对象引用（reference），其中64位长度的long和double会占用2个局部变量空间（slot），其余的数据类型只占用1个。在方法运行期间不会改变局部变量表的大小。&lt;/p&gt;
+&lt;p&gt;线程请求的栈深超过虚拟机的限制，会抛出 &lt;code&gt;StackOverflowError&lt;/code&gt; 异常&lt;/p&gt;
+&lt;p&gt;虚拟机栈动态扩展时内存不足，会抛出 &lt;code&gt;OutOfMemoryError&lt;/code&gt; 异常&lt;/p&gt;
+&lt;h2 id=&quot;本地方法栈&quot;&gt;&lt;a href=&quot;#本地方法栈&quot; class=&quot;headerlink&quot; title=&quot;本地方法栈&quot;&gt;&lt;/a&gt;本地方法栈&lt;/h2&gt;&lt;p&gt;类似 &lt;code&gt;虚拟机栈&lt;/code&gt; ，为 &lt;code&gt;Native&lt;/code&gt; 方法服务。 有的虚拟机中会把 &lt;code&gt;本地方法栈&lt;/code&gt; 和 &lt;code&gt;虚拟机栈&lt;/code&gt; 合二为一。&lt;/p&gt;
+&lt;h2 id=&quot;Java-堆&quot;&gt;&lt;a href=&quot;#Java-堆&quot; class=&quot;headerlink&quot; title=&quot;Java 堆&quot;&gt;&lt;/a&gt;Java 堆&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;存储：对象实例&lt;/li&gt;
+&lt;li&gt;线程共享&lt;/li&gt;
+&lt;li&gt;虚拟机中最大的一块&lt;/li&gt;
+&lt;li&gt;GC的主要区域，又称作“GC堆”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由于现在垃圾收集器基本都采用分代收集算法，所以 &lt;code&gt;Java堆&lt;/code&gt; 还可以细分为： 新生代和老年代；再细致一点有 Eden空间、 From Survivor空间、 To Survivor空间等。&lt;/p&gt;
+&lt;p&gt;线程可能会在 &lt;code&gt;Java堆&lt;/code&gt; 上划分出多个线程私有的分配缓冲区（Thread Local Allocation Buffer, TLAB），用于减少多线程并发分配内存时的资源冲突。&lt;/p&gt;
+&lt;p&gt;在实例分配时缺少内存，会抛出 &lt;code&gt;OutOfMemoryError&lt;/code&gt; 异常。&lt;/p&gt;
+&lt;h2 id=&quot;方法区&quot;&gt;&lt;a href=&quot;#方法区&quot; class=&quot;headerlink&quot; title=&quot;方法区&quot;&gt;&lt;/a&gt;方法区&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;存储：类型信息、常量等&lt;/li&gt;
+&lt;li&gt;线程共享&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。&lt;/p&gt;
+&lt;p&gt;习惯使用HotSpot的开发，更愿意把 &lt;code&gt;方法区&lt;/code&gt; 称为 “永久代”，本质上两者并不等价。&lt;/p&gt;
+&lt;h3 id=&quot;运行时常量池&quot;&gt;&lt;a href=&quot;#运行时常量池&quot; class=&quot;headerlink&quot; title=&quot;运行时常量池&quot;&gt;&lt;/a&gt;运行时常量池&lt;/h3&gt;&lt;p&gt;运行时常量池是方法区的一部分。用于存放编译期生成的各种字面量和符号引用以及翻译出来的直接引用。&lt;/p&gt;
+&lt;p&gt;在编译期外也有方式可以进入常量池，常见的有 &lt;code&gt;String.intern()&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;直接内存&quot;&gt;&lt;a href=&quot;#直接内存&quot; class=&quot;headerlink&quot; title=&quot;直接内存&quot;&gt;&lt;/a&gt;直接内存&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;不属于虚拟机运行时数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;直接内存（Direct Memory）不属于虚拟机运行时数据区的一部分，也不是java虚拟机规范定义的内存区域。JDK1.4引入NIO类，可以使用 &lt;strong&gt;Native&lt;/strong&gt; 函数库直接分配堆外内存然后通过 &lt;code&gt;DirectByteBuffer&lt;/code&gt; 对象作为这块内存的引用进行操作，避免在Java堆和Native堆中来回复制数据。&lt;/p&gt;
+&lt;p&gt;本机直接内存分配不会受到Java堆大小的限制，但受到本机总内存的限制。忽略它，常容易产生 &lt;code&gt;OutOfMemoryError&lt;/code&gt;。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;《深入理解Java虚拟机》第二章&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Java虚拟机在运行时会把它所管理的内存划分为若干个区域。&lt;/p&gt;
+&lt;h2 id=&quot;程序计数器&quot;&gt;&lt;a href=&quot;#程序计数器&quot; class=&quot;headerlink&quot; t
+    
+    </summary>
+    
+      <category term="core java" scheme="http://dm4157.github.io/categories/core-java/"/>
+    
+    
+      <category term="java" scheme="http://dm4157.github.io/tags/java/"/>
+    
+      <category term="jvm" scheme="http://dm4157.github.io/tags/jvm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>小伙伴们的Git Flow(测试保障版)</title>
     <link href="http://dm4157.github.io/2017/04/25/git4/"/>
     <id>http://dm4157.github.io/2017/04/25/git4/</id>
