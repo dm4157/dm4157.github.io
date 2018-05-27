@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>试卷管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/试卷管理/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/prototypePre.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/prototypePost.js"></script>
+    <script src="files/试卷管理/data.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (图片) -->
+      <div id="u248" class="ax_default _图片">
+        <img id="u248_img" class="img " src="images/试卷管理/u248.jpg"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u249" class="ax_default box_2">
+        <div id="u249_div" class=""></div>
+        <div id="u249_text" class="text ">
+          <p><span>考试系统中增加试卷管理页。</span></p><p><span>该页签需要用户具有：【考试管理-查看试题】权限才可显示。</span></p><p><span>该页签需要用户具有：【考试管理-新建试卷】权限才可新增</span></p><p><span>试卷需要用户在试卷中添加[管理员]权限才可修改。</span></p><p><span>该试卷系统适用于目前的：学习晨会、模拟考试、活动考试。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u250" class="ax_default _图片">
+        <img id="u250_img" class="img " src="images/试卷管理/u250.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u251" class="ax_default box_2">
+        <div id="u251_div" class=""></div>
+        <div id="u251_text" class="text ">
+          <p><span>点击新建试卷弹出选择试卷选项框</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u252" class="ax_default _图片">
+        <img id="u252_img" class="img " src="images/试卷管理/u252.png"/>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u253" class="ax_default _图片">
+        <img id="u253_img" class="img " src="images/试卷管理/u253.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u254" class="ax_default box_2">
+        <div id="u254_div" class=""></div>
+        <div id="u254_text" class="text ">
+          <p><span>试卷类型：增加标准考试类型</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u255" class="ax_default box_1">
+        <div id="u255_div" class=""></div>
+        <div id="u255_text" class="text ">
+          <p><span>试卷类型：试卷类型增加标准考试。</span></p><p><span>考试编号：标准考试于学习晨会（老）的编号不重复。编号用于识别考试，即考试ID。未来可用作索引考试的key。</span></p><p><span>新建考卷：点击新建考卷弹出考试界面，在试卷类型中选择【标准考试】后弹出标准考试编辑界面。</span></p><p><span>操作规则：标准考试试卷，在考试时间开始之前，可以对其内容进行编辑，在考试开始之后，则不可进行编辑。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u256" class="ax_default _图片">
+        <img id="u256_img" class="img " src="images/试卷管理/u256.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u257" class="ax_default _一级标题">
+        <div id="u257_div" class=""></div>
+        <div id="u257_text" class="text ">
+          <p><span>标准考试编辑界面</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u258" class="ax_default box_2">
+        <div id="u258_div" class=""></div>
+        <div id="u258_text" class="text ">
+          <p><span>基本信息：考试的基础信息</span></p><p><span>考试名称：必填，限制40个汉字以内。超出则无法继续输入。</span></p><p><span>适用城市：必填，城市由后端接口录入，用户可进行选择，且只能选择一个城市。</span></p><p><span>考试范围：必填，默认全员；若选择部分，则可以根据会员体系的组织进行用户的选择，可多选；若选择指定人员，则可以添加指定人员，功能与线上课程指定人员可见功能一致。填写后只有在群体内的用户才能对试卷可见。其他用户不可见。</span></p><p><span>考试报名：必填，默认免报名。若选择报名，则必须填写报名截止日期，精确到小时:分。若选择需要报名，则在APP上考试前会出现报名环节。且在考试首页会显示【报名截止日期】。若选择面报名，则考试不显示报名页面。</span></p><p><span>开始/结束：必填，默认选择不限时，显示考试的开始时间和结束时间，精确到小时:分。不限时考试用户可在任何时间开始考试；若限时，则用户只能在开始时间到才能进入考试，到考试结束时间若还未提交，则会被强制提交试卷。</span></p><p><span>考试时长：必填，考试的时间，默认显示不限时。若不限时，则在APP上不限时限制时间，且用户可以答多久都没关系，除非考试结束时间到，会被强制交卷。若填写了时长，则在考试完成时间之前，若达到考试时长，则也会自动交卷。用户显示的倒计时时间为当前时间到考试结束时间的时间段与剩余考试时长中取较短时间。</span></p><p><span>成绩答案：必填，默认显示立即公布，考试成绩都为考试结束后才公布。若选择定时公布，则出现时间控件，选择时间后，会在时间到达时可查询成绩与解析。时间精确到时:分。</span></p><p><span>添加管理员工号：该考试只有创建人能够看到。若创建人添加其他管理员工号后，添加成功的人也可以充当管理员职责，能够对考试界面进行编辑。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u259" class="ax_default box_2">
+        <div id="u259_div" class=""></div>
+        <div id="u259_text" class="text ">
+          <p><span>附加功能：考试的附加功能</span></p><p><span>可选功能：非必填</span></p><p><span>1、验证工号：选择此项后，用户从考试入口点击进入考试主页后，点击开始或者报名，则弹出企业认证界面，需用户绑定正确账号和密码后可进行下一步。</span></p><p><span>2、考试禁止后台：选择此项后会出现选择次数控件，可以选择2-10次。选择后用户将APP后台运行超过8秒则算作一次后台操作。超过规定限制后，会被系统强制交卷。</span></p><p><span>3、添加靠前输入信息：可以选择在点击报名后，验证工号后（若有），选择考场前（若有）。可随意添加用户输入字段，但一个考试最多添加5项。用户在添加时可以编辑字段，同时选择输入格式，分为：文字和数字格式。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u260" class="ax_default box_2">
+        <div id="u260_div" class=""></div>
+        <div id="u260_text" class="text ">
+          <p><span>考场信息：考试的考场信息</span></p><p><span>点击添加后会出现一条下拉菜单控件，用户可选择该城市下的考场，下拉菜单显示考试名称列表。</span></p><p><span>添加后显示考试名称，考场地址。在提交之前，报名人数，到场签到人数若无数据则不显示，若有数据则显示具体人数。且若有人报名或签到则删除按钮置灰，不可点击。</span></p><p><span>考场信息若填写内容，则会出现在报名环节。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u261" class="ax_default box_2">
+        <div id="u261_div" class=""></div>
+        <div id="u261_text" class="text ">
+          <p><span>考试须知</span></p><p><span>用户可编辑富文本的考试须知。非必填，若填写则会出现在用户点击开始考试之后，答题之前的位置。</span></p><p><span><br></span></p><p><span>提交按钮，点击后，若有必选项未填写，则弹出红色提示toast:&quot;请将必选项填写完整”同时在未填写的必选项后面显示红字：“请完善次项信息”。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u262" class="ax_default _一级标题">
+        <div id="u262_div" class=""></div>
+        <div id="u262_text" class="text ">
+          <p><span>标准考试查看界面</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u263" class="ax_default box_2">
+        <div id="u263_div" class=""></div>
+        <div id="u263_text" class="text ">
+          <p><span>在查看状态可添加或删除管理员工号，立即生效</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u264" class="ax_default box_2">
+        <div id="u264_div" class=""></div>
+        <div id="u264_text" class="text ">
+          <p><span>在查看状态可编辑考生输入信息，立即生效，在考试开始后不可添加与删除。生成表格已最后输入信息的维度字段为准。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u265" class="ax_default box_2">
+        <div id="u265_div" class=""></div>
+        <div id="u265_text" class="text ">
+          <p><span>操作：</span></p><p><span>删除按钮在该考场有报名人数时会泽不可点击。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u266" class="ax_default _图片">
+        <img id="u266_img" class="img " src="images/试卷管理/u266.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u267" class="ax_default _一级标题">
+        <div id="u267_div" class=""></div>
+        <div id="u267_text" class="text ">
+          <p><span>标准考试出题界面</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u268" class="ax_default box_2">
+        <div id="u268_div" class=""></div>
+        <div id="u268_text" class="text ">
+          <p><span>题目赋分：</span></p><p><span>必填、无默认值。分为单选、多选、判断（通用与案例题中的此类题型）可输入到小数点后两位。</span></p><p><span>及格分：设置及格分。若最终成绩小于此分数，则为不及格。</span></p><p><span>随机出题设置：必填，默认不随机；打乱题目顺序为在保持大题型顺序不变的情况下，将题目顺序打乱；从试卷中随机抽取题目N个，为从试卷题库中抽随机取几个题目尽心测试。抽取题目数量不得大于试卷题目数量。</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u269" class="ax_default _图片">
+        <img id="u269_img" class="img " src="images/试卷管理/u269.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u270" class="ax_default _一级标题">
+        <div id="u270_div" class=""></div>
+        <div id="u270_text" class="text ">
+          <p><span>选择题型界面</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u271" class="ax_default _图片">
+        <img id="u271_img" class="img " src="images/试卷管理/u271.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u272" class="ax_default _一级标题">
+        <div id="u272_div" class=""></div>
+        <div id="u272_text" class="text ">
+          <p><span>非案例提编辑界面</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u273" class="ax_default box_2">
+        <div id="u273_div" class=""></div>
+        <div id="u273_text" class="text ">
+          <p><span>适用地区默认显示改试卷的地区</span></p><p><span>知识类型非必填</span></p><p><span>知识属性非必填</span></p><p><span>题目难度必填一个</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u274" class="ax_default _图片">
+        <img id="u274_img" class="img " src="images/试卷管理/u274.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u275" class="ax_default _一级标题">
+        <div id="u275_div" class=""></div>
+        <div id="u275_text" class="text ">
+          <p><span>案例编辑界面</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u276" class="ax_default _图片">
+        <img id="u276_img" class="img " src="images/试卷管理/u276.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u277" class="ax_default _一级标题">
+        <div id="u277_div" class=""></div>
+        <div id="u277_text" class="text ">
+          <p><span>案例编辑完成后可添加题目</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u278" class="ax_default _图片">
+        <img id="u278_img" class="img " src="images/试卷管理/u278.png"/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u279" class="ax_default _一级标题">
+        <div id="u279_div" class=""></div>
+        <div id="u279_text" class="text ">
+          <p><span>在案例中添加题目，标题栏显示案例的前段文字</span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
